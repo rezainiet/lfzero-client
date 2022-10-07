@@ -7,6 +7,7 @@ import Reviews from "../Reviews.js/Reviews";
 import Devices from "../Devices/Devices";
 import HeroSlider from "./HeroSlider/HeroSlider";
 import Statistics from "./Statistics/Statistics";
+import Partners from "./Partners/Partners";
 //import Courses from '../Courses/Courses';
 
 
@@ -28,6 +29,7 @@ const Homepage = () => {
       <SkillDevlopment></SkillDevlopment>
       <Reviews />
       <FreeCourses></FreeCourses>
+      <Partners />
       <Devices></Devices>
     </div>
   );
