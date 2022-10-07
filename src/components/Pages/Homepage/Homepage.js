@@ -4,7 +4,9 @@ import SkillDevlopment from "../Courses/SkillDevlopment";
 import TrendingCourses from "../Courses/TrendingCourses";
 import SchoolCollege from "../Courses/SchoolCollege";
 import Reviews from "../Reviews.js/Reviews";
+import Devices from "../Devices/Devices";
 //import Courses from '../Courses/Courses';
+
 
 const Homepage = () => {
   return (
@@ -23,6 +25,7 @@ const Homepage = () => {
       <SkillDevlopment></SkillDevlopment>
       <Reviews />
       <FreeCourses></FreeCourses>
+      <Devices></Devices>
     </div>
   );
 };
