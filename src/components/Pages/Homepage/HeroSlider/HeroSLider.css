@@ -1,0 +1,4 @@
+.myClipPath {
+    -webkit-clip-path: circle(99.0% at 50% 0);
+    clip-path: circle(100.0% at 50% 0);
+}

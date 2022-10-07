@@ -4,21 +4,24 @@ import SkillDevlopment from "../Courses/SkillDevlopment";
 import TrendingCourses from "../Courses/TrendingCourses";
 import SchoolCollege from "../Courses/SchoolCollege";
 import Reviews from "../Reviews.js/Reviews";
+import HeroSlider from "./HeroSlider/HeroSlider";
+import Statistics from "./Statistics/Statistics";
 //import Courses from '../Courses/Courses';
 
 const Homepage = () => {
   return (
     <div>
-      <p>
+      {/* <p>
         {" "}
         (Homepage) Navigate to{" "}
         <span className="text-purple-500">
           ./components/Pages/Homepage/Homepage
         </span>{" "}
         directory to working on this file
-      </p>
-
+      </p> */}
+      <HeroSlider />
       <TrendingCourses />
+      <Statistics />
       <SchoolCollege></SchoolCollege>
       <SkillDevlopment></SkillDevlopment>
       <Reviews />
