@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from './../../../assets/images/icons/logo.png'
 
 const Navbar = () => {
+    const navigate = useNavigate()
+
     return (
         <div className='bg-[#5D10E3] px-20'>
             <div className='flex justify-between items-center p-6 px-6 lg:px-0 container mx-auto'>
@@ -45,8 +48,8 @@ const Navbar = () => {
                     <div className='bg-white shadow-md lg:bg-transparent lg:shadow-none py-10 lg:py-0 flex flex-col lg:items-center lg:flex-row px-6 space-y-4 
                     lg:space-y-0 lg:space-x-3'>
 
-                        <button className='bg-white text-[#F53289] px-7 py-2 rounded-full'>Login</button>
-                        <button className='bg-[#F53289] text-white px-7 py-2 rounded-full'>Registration</button>
+                        <button onClick={() => navigate('/login')} className='bg-white text-[#F53289] px-7 py-2 rounded-full'>Login</button>
+                        <button onClick={() => navigate('/login')} className='bg-[#F53289] text-white px-7 py-2 rounded-full'>Registration</button>
                     </div>
                 </div>
             </div>
