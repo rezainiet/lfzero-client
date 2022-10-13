@@ -49,7 +49,7 @@ const Navbar = () => {
                     lg:space-y-0 lg:space-x-3'>
 
                         <button onClick={() => navigate('/login')} className='bg-white text-[#F53289] px-7 py-2 rounded-full'>Login</button>
-                        <button onClick={() => navigate('/login')} className='bg-[#F53289] text-white px-7 py-2 rounded-full'>Registration</button>
+                        <button onClick={() => navigate('/signUp')} className='bg-[#F53289] text-white px-7 py-2 rounded-full'>Registration</button>
                     </div>
                 </div>
             </div>
