@@ -1,10 +1,24 @@
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import loginBg from '../../../assets/images/loginImage.png'
+import auth from '../../../firebase.init';
 
 const Login = () => {
+    const [user, loading] = useAuthState(auth);
+    const navigate = useNavigate();
     function loginFormSubmit(e) {
-        e.preventDefault()
-    }
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        signInWithEmailAndPassword(auth, email, password);
+    };
+
+    if (user) {
+        navigate('/');
+    };
+
     return (
         <section className='bg-[#643CF4]'>
             <div className="max-w-7xl mx-auto flex justify-between py-12 px-1 lg:px-2 xl:px-0">
@@ -14,7 +28,7 @@ const Login = () => {
                         <input name='email' className='text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2' placeholder='example@gmail.com' type='text'></input>
                         <input name='password' className='text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2' placeholder='**********' type='password'></input>
                         <a className='font-semibold text-[#643CF4] my-2' href='2' alt=''>Forgot Password</a>
-                        <input className='text-md my-2 px-5 py-3 rounded-full outline-[#F53289] bg-gradient-to-r from-[#f7d7e5] to-[#F53289] hover:from-[#F53289] hover:to-[#f7d7e5] text-white cursor-pointer' value='Login' type='submit'></input>
+                        <input className='text-md my-2 px-5 py-3 rounded-full outline-[#F53289] bg-gradient-to-r from-[#f7d7e5] to-[#F53289] hover:from-[#F53289] hover:to-[#f7d7e5] text-white cursor-pointer' value={loading ? 'Logging in...' : 'Login'} type='submit'></input>
                     </form>
                 </div>
                 <img className='hidden lg:block lg:w-[500px] xl:w-[600px] 2xl:flex-1' src={loginBg} alt=''></img>
