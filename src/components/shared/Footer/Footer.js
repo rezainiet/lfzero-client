@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className='bg-[#5D10E3]'>
+        <footer className='bg-gradient-to-r from-indigo-600 to-[#5D10E3]'>
             <div className='pt-[51px] pb-[66px] px-5 2xl:px-0 max-w-7xl mx-auto'>
                 <div className='sm:grid grid-cols-3 lg:grid-cols-5'>
                     <div className='flex flex-col'>
@@ -38,7 +38,7 @@ const Footer = () => {
                         </form>
                     </div>
                 </div>
-                <p className='text-white text-[12px] mt-5 lg:mt-[60px]'>&#169; 2022 All Rights Resierved</p>
+                <h1 className='text-white text-[16px] mt-5 lg:mt-[60px]'>&#169; 2022 All Rights Resierved</h1>
             </div>
         </footer>
     );

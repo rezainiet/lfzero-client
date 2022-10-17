@@ -8,7 +8,9 @@ import Devices from "../Devices/Devices";
 import HeroSlider from "./HeroSlider/HeroSlider";
 import Statistics from "./Statistics/Statistics";
 import Partners from "./Partners/Partners";
+import About from "../About/About";
 //import Courses from '../Courses/Courses';
+
 
 
 const Homepage = () => {
@@ -31,6 +33,7 @@ const Homepage = () => {
       <FreeCourses></FreeCourses>
       <Partners />
       <Devices></Devices>
+      
     </div>
   );
 };
