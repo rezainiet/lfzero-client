@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Course = ({ course }) => {
+  const navigate = useNavigate()
   const { _id, name, img, des, rating, price } = course;
   return (
     <div className="card  lg:max-w-lg  bg-base-100 shadow-xl pb-5 rounded">
@@ -38,6 +40,7 @@ const Course = ({ course }) => {
         </div>
 
         <button
+        onClick={() => navigate(`/course/${_id}`)}
           className="btn btn-primary p-2 px-5 rounded text-white"
           style={{ backgroundColor: "#F53289" }}
         >
