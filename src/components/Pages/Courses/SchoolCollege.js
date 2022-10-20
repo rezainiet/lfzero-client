@@ -4,7 +4,7 @@ import Course from "./Course";
 const SchoolCollege = () => {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-    fetch("Course.json")
+    fetch("http://localhost:4000/api/courses")
       .then((res) => res.json())
       .then((data) => setCourses(data));
   }, []);
@@ -22,7 +22,7 @@ const SchoolCollege = () => {
           starts from classs 1 and upto class 12 also admission...
         </p>
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-5">
-          {courses.map((course) => (
+          {courses.slice(0, 3).map((course) => (
             <Course course={course}></Course>
           ))}
         </div>
