@@ -30,6 +30,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/course/:id" element={<SingleCourse />} />
+          <Route path="/mycourses" element={<MyCourses />} />
       </Routes>
       <Footer />
     </div>
