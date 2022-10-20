@@ -9,6 +9,8 @@ import Navbar from "./components/shared/Navbar/Navbar";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Contact from "./components/Pages/Contact/Contact";
+// import Blog from "./components/Pages/Blog/Blog";
+import Blogs from "./components/Pages/Blog/Blogs";
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
+        <Route path="/blog" element={<Blogs></Blogs>}></Route>
       </Routes>
       <Footer />
     </div>
