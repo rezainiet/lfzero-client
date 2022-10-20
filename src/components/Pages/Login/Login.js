@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import loginBg from '../../../assets/images/loginImage.png'
 import auth from '../../../firebase.init';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -24,7 +25,7 @@ const Login = () => {
     const forgotFn = async () => {
         if (!email) { return alert('Please, write your email id.') }
         await sendPasswordResetEmail(email)
-        alert('Your forgotten password email is send.')
+        toast.success('Your forgotten password email is send.')
     }
 
     if (user) {

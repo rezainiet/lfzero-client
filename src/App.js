@@ -8,10 +8,11 @@ import SignUp from "./components/Pages/SignUp/SignUp";
 import SingleCourse from "./components/Pages/SingleCourse/SingleCourse";
 import Footer from "./components/shared/Footer/Footer";
 import Navbar from "./components/shared/Navbar/Navbar";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Contact from "./components/Pages/Contact/Contact";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import MyCourses from "./components/Pages/StudentDashboard/MyCourses";
 
 
@@ -37,8 +38,11 @@ function App() {
         <Route path="/mycourses" element={<MyCourses />} />
       </Routes>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }
 
 export default App;
+
+// hello sir
