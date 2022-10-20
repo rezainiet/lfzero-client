@@ -5,10 +5,11 @@ import Login from "./components/Pages/Login/Login";
 import SignUp from "./components/Pages/SignUp/SignUp";
 import Footer from "./components/shared/Footer/Footer";
 import Navbar from "./components/shared/Navbar/Navbar";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Contact from "./components/Pages/Contact/Contact";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
       </Routes>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }
