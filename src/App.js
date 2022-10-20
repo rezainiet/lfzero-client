@@ -9,7 +9,7 @@ import Navbar from "./components/shared/Navbar/Navbar";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Contact from "./components/Pages/Contact/Contact";
-import MyCourses from "./components/Pages/StudentDashboard/MyCourses";
+
 
 function App() {
   return (
@@ -22,7 +22,6 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
-        <Route path="/mycourses" element={<MyCourses />} />
       </Routes>
       <Footer />
     </div>
