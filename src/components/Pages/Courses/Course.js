@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import { Navigate, useNavigate } from "react-router-dom";
 
 const Course = ({ course }) => {
@@ -9,6 +10,13 @@ const Course = ({ course }) => {
   const handleNavigate = (id) => {
     navigate(`/details/${id}`)
   }
+=======
+import { useNavigate } from "react-router-dom";
+
+const Course = ({ course }) => {
+  const navigate = useNavigate()
+  const { _id, name, img, des, rating, price } = course;
+>>>>>>> 8074c8b611ff2c5b5bc67b6225a8c7c96aedc843
   return (
     <div className="card  lg:max-w-lg  bg-base-100 shadow-xl pb-5 rounded">
       <figure className="px-10 pt-10">
@@ -45,6 +53,7 @@ const Course = ({ course }) => {
         </div>
 
         <button
+        onClick={() => navigate(`/course/${_id}`)}
           className="btn btn-primary p-2 px-5 rounded text-white"
           style={{ backgroundColor: "#F53289" }}
           onClick={() => handleNavigate(_id)}
