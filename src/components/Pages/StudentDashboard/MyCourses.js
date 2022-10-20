@@ -29,7 +29,7 @@ const MyCourses = () => {
               className="text-xl font-bold uppercase m-10 p-5"
               style={{ color: "#F53289" }}
             >
-              Recommendations for you
+              Recommendations for other courses
             </h2>
             <div className="grid sm:grid-cols-1 lg:grid-cols-1  gap-5">
               {courses.map((recommendCourse) => (
