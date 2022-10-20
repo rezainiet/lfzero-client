@@ -60,6 +60,46 @@ const Navbar = () => {
                         }
                     </div>
                 </div>
+                {user ? (
+                    <>
+                        <div className="dropdown dropdown-end">
+                            <label tabIndex={0} className="btn m-1 border-none">
+                                <img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt-F5GQg8qB2fWquF1ltQvAT2Z8Dv5pJLb9w&usqp=CAU"
+                                    width="40px"
+                                    alt=''></img>
+                            </label>
+                            <ul
+                                tabIndex={0}
+                                className="dropdown-content menu p-5 shadow bg-slate-50 rounded-box w-52"
+                            >
+                                <li className="flex">
+                                    <div className="flex-auto border-solid border-2 border-sky-500 ">
+                                        <img
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt-F5GQg8qB2fWquF1ltQvAT2Z8Dv5pJLb9w&usqp=CAU"
+                                            width="40px"
+                                            alt=''></img>
+                                        <p>Maisha Maliha</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a>My Profile</a>
+                                </li>
+                                <li>
+                                    <a>My Learning</a>
+                                </li>
+                                <li>
+                                    <a>My Cart</a>
+                                </li>
+                                <li>
+                                    <a>My Wishlist</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </>
+                ) : (
+                    <></>
+                )}
             </div>
         </div>
     );
