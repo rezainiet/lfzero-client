@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import MySingleCourse from "./MySingleCourse";
 import RecommendCourse from "./RecommendCourse";
-import SingleCourse from "./SingleCourse";
 
 const MyCourses = () => {
   const [courses, setCourses] = useState([]);
@@ -21,7 +21,7 @@ const MyCourses = () => {
         <div className="flex">
           <div className=" flex-1 grid sm:grid-cols-1 lg:grid-cols-1  gap-5">
             {courses.map((singleCourse) => (
-              <SingleCourse singleCourse={singleCourse}></SingleCourse>
+              <MySingleCourse singleCourse={singleCourse}></MySingleCourse>
             ))}
           </div>
           <div className="flex-2">
