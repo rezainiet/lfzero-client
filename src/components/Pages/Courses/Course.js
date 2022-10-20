@@ -1,12 +1,19 @@
 import React from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Course = ({ course }) => {
-  const { _id, name, img, des, rating, price } = course;
+  const { _id, name, photoURL, description, ratings, price } = course;
+  const navigate = useNavigate();
+
+
+  const handleNavigate = (id) => {
+    navigate(`/details/${id}`)
+  }
   return (
     <div className="card  lg:max-w-lg  bg-base-100 shadow-xl pb-5 rounded">
       <figure className="px-10 pt-10">
         <img
-          src={img}
+          src={photoURL}
           alt="Course"
           height="150px"
           width="300px"
@@ -20,26 +27,27 @@ const Course = ({ course }) => {
         >
           {name}
         </h2>
-        <p>{des}</p>
+        <p>{description}</p>
 
         <div class="grid grid-cols-6 gap-4 pb-4">
           <p
             className="font-bold col-start-1 col-end-3"
             style={{ color: "#5D10E3" }}
           >
-            {price}
+            ${price}
           </p>
           <p
             className="col-end-8 col-span-3 text-xs"
             style={{ color: "#F48C08" }}
           >
-            {rating}
+            {ratings}
           </p>
         </div>
 
         <button
           className="btn btn-primary p-2 px-5 rounded text-white"
           style={{ backgroundColor: "#F53289" }}
+          onClick={() => handleNavigate(_id)}
         >
           Details
         </button>
