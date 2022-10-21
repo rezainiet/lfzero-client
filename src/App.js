@@ -14,6 +14,9 @@ import Contact from "./components/Pages/Contact/Contact";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MyCourses from "./components/Pages/StudentDashboard/MyCourses";
+
+import Instructor from "./components/Pages/Instructor/Instructor";
+
 import AdminDashboard from "./components/Pages/AdminDashboard/AdminDashboard";
 import AllUsers from "./components/Pages/AdminDashboard/AllUsers";
 import AllInstructor from "./components/Pages/AdminDashboard/AllInstructor";
@@ -39,33 +42,8 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/details/:id" element={<CourseDetails />} />
         <Route path="/course/:id" element={<SingleCourse />} />
-        {/* <Route path="/signUp" element={<SignUp />} / */}
         <Route path="/mycourses" element={<MyCourses />} />
-        <Route path="/myprofile" element={<MyProfile />} />
 
-        {/* Admin dashboard route */}
-
-        <Route
-          path="admin-dashboard"
-          element={
-            // <RequireAuth>
-            <AdminDashboard />
-            // </RequireAuth>
-          }
-        >
-          <Route index element={<AllUsers />}></Route>
-          <Route path="all-Instructor" element={<AllInstructor />}></Route>
-          <Route path="all-Admin" element={<AllAdmin />}></Route>
-          <Route path="all-Student" element={<AllStudents />}></Route>
-          {/* <Route
-            path="users"
-            element={
-              <RequireAdmin>
-                <Users></Users>
-              </RequireAdmin>
-            }
-          ></Route> */}
-        </Route>
       </Routes>
       <Footer />
       <ToastContainer />
