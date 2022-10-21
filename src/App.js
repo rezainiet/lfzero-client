@@ -14,6 +14,7 @@ import Contact from "./components/Pages/Contact/Contact";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import MyCourses from "./components/Pages/StudentDashboard/MyCourses";
+import Instructor from "./components/Pages/Instructor/Instructor";
 
 
 function App() {
@@ -34,8 +35,8 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/details/:id" element={<CourseDetails />} />
         <Route path="/course/:id" element={<SingleCourse />} />
-        {/* <Route path="/signUp" element={<SignUp />} / */}
         <Route path="/mycourses" element={<MyCourses />} />
+        <Route path="/instructor" element={<Instructor />} />
       </Routes>
       <Footer />
       <ToastContainer />
