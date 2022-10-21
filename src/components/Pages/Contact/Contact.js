@@ -139,7 +139,7 @@ const Contact = () => {
                 +1 010 582 5006
               </p>
               <p className="font-openSans font-light text-lg">
-                lfzero@gmail.com
+                support@lfzero.com
               </p>
             </div>
           </div>
@@ -147,7 +147,7 @@ const Contact = () => {
             <div className="card w-fit bg-white drop-shadow-2xl">
               <div className="card-body bg-gray-200 bg-opacity-50">
                 <h2 className="text-center font-montserrat font-medium text-4xl text-gray-600">
-                  Send as Message!
+                  Send a Message!
                 </h2>
                 <form onSubmit={handleSubmit} className="">
                   <div className="form-control w-full ">

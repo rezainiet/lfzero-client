@@ -12,8 +12,8 @@ const SignUp = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
-      const [updateProfile, updating, nameError] = useUpdateProfile(auth);
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const [updateProfile, updating, nameError] = useUpdateProfile(auth);
 
     const signUpFormSubmit = async (e) => {
         e.preventDefault()
@@ -24,10 +24,11 @@ const SignUp = () => {
         await updateProfile({ displayName: name });
         await createUserWithEmailAndPassword(email, pass)
     }
-    
-    if(user){
+
+    if (user) {
         return navigate('/')
     }
+
     return (
         <section className='bg-[#643CF4]'>
             <div className="max-w-7xl mx-auto flex justify-between py-12 px-1 lg:px-2 xl:px-0">
@@ -43,7 +44,7 @@ const SignUp = () => {
                             <a href='#' className='text-[#F53289] font-medium'>the terms and conditions</a>
                         </div>
                         <p className='text-[#F53289]'>{error?.message}</p>
-                        <input disabled={!agree} className={`${agree ? 'bg-gradient-to-r from-[#f7d7e5] to-[#F53289] hover:from-[#F53289] hover:to-[#f7d7e5] text-white cursor-pointer': 'bg-gray-200 text-gray-500'} text-md my-2 px-5 py-3 rounded-full outline-[#F53289] `} value='Sign Up' type='submit'></input>
+                        <input disabled={!agree} className={`${agree ? 'bg-gradient-to-r from-[#f7d7e5] to-[#F53289] hover:from-[#F53289] hover:to-[#f7d7e5] text-white cursor-pointer' : 'bg-gray-200 text-gray-500'} text-md my-2 px-5 py-3 rounded-full outline-[#F53289] `} value='Sign Up' type='submit'></input>
                     </form>
                 </div>
                 <img className='hidden lg:block lg:w-[500px] xl:w-[600px] 2xl:flex-1' src={signUpBg} alt=''></img>

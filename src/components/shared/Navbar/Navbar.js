@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -7,8 +7,25 @@ import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
     const [user, loading] = useAuthState(auth);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [searchedCourse, setSearchedCoure] = useState();
 
+
+
+    const handleSearch = (event) => {
+        event.preventDefault();
+        const value = event.target.searchValue.value;
+        const url = `http://localhost:4000/api/courses/getCourse/${value}`
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setSearchedCoure(data))
+    };
+
+    console.log(searchedCourse)
+
+
+
+    console.log(user)
     return (
         <div className='bg-[#5D10E3] px-20'>
             <div className='flex justify-between items-center p-6 px-6 lg:px-0 container mx-auto'>
@@ -43,7 +60,9 @@ const Navbar = () => {
                     <div className='bg-white shadow-md lg:bg-transparent lg:shadow-none py-10 lg:py-0 flex flex-col lg:items-center lg:flex-row px-6 space-y-4 
                     lg:space-y-0 lg:space-x-3'>
 
-                        <input type="text" className='outline-none py-1 px-5 w-96 rounded-xl focus:ring-1 focus:ring-pink-500' placeholder='Search' />
+                        <form onSubmit={handleSearch}>
+                            <input type="text" name='searchValue' className='outline-none py-1 px-5 w-96 rounded-xl focus:ring-1 focus:ring-pink-500' placeholder='Search' /> <button type='submit' className='text-white hover:cursor-pointer'>Search</button>
+                        </form>
                     </div>
                 </div>
                 <div className="-translate-y-full peer-checked:translate-y-0 lg:translate-y-0 inset-0 fixed lg:static pt-20 lg:pt-0 bg-white lg:bg-transparent
@@ -79,7 +98,7 @@ const Navbar = () => {
                                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt-F5GQg8qB2fWquF1ltQvAT2Z8Dv5pJLb9w&usqp=CAU"
                                             width="40px"
                                             alt=''></img>
-                                        <p>Maisha Maliha</p>
+                                        <p>{user?.displayName}</p>
                                     </div>
                                 </li>
                                 <li>
