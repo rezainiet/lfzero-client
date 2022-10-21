@@ -16,6 +16,9 @@ import AddBlog from "./components/Pages/Blog/AddBlog";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MyCourses from "./components/Pages/StudentDashboard/MyCourses";
+import PrivacyAndPolicy from "./components/Pages/PrivacyAndPolicy/PrivacyAndPolicy";
+import TermsAndCondition from "./components/Pages/TermsAndCondition/TermsAndCondition";
+import NotFound from "./components/Pages/NotFound/NotFound";
 
 import Instructor from "./components/Pages/Instructor/Instructor";
 
@@ -39,6 +42,14 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/home" element={<Homepage />} />
         <Route path="/about" element={<About />} />
+
+        <Route path="/privacyAndPolicy" element={<PrivacyAndPolicy />} />
+        <Route path="/termsAndCondition" element={<TermsAndCondition />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About />} />
+
+
+
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
@@ -47,7 +58,7 @@ function App() {
         <Route path="/details/:id" element={<CourseDetails />} />
         <Route path="/course/:id" element={<SingleCourse />} />
         <Route path="/mycourses" element={<MyCourses />} />
-
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
       <ToastContainer />

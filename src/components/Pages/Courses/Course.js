@@ -56,6 +56,15 @@ const Course = ({ course }) => {
         >
           Details
         </button>
+        <button
+          onClick={() => navigate(`/course/${_id}`)}
+          className="btn btn-primary p-2 px-5 rounded text-white"
+          style={{ backgroundColor: "#00ff00" }}
+        // onClick={() => handleNavigate(_id)}
+        >
+          Enroll Now
+        </button>
+
       </div>
     </div>
   );
