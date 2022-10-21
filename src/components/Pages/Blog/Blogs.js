@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Blog from './Blog';
 
 const Services = () => {
@@ -14,7 +15,7 @@ const Services = () => {
     return (
         <div id="blogs" className='container'>
             <div className='row'>
-                <h1 className='blogs-title mt-3 text-success'>Blogs</h1>
+                <h1 className='blogs-title mt-3 text-2xl text-center'>Blogs</h1>
                 <div className='blogs-container'>
                     {
                         blogs.map(blog => <Blog
@@ -24,7 +25,8 @@ const Services = () => {
                     }
                 </div>
             </div>
-
+            {/* <Link to="/addblog">
+                <button>Write Artcle</button></Link> */}
         </div>
     );
 };

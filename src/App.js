@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Contact from "./components/Pages/Contact/Contact";
 // import Blog from "./components/Pages/Blog/Blog";
 import Blogs from "./components/Pages/Blog/Blogs";
+import AddBlog from "./components/Pages/Blog/AddBlog";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
+        <Route path="/addblog" element={<AddBlog></AddBlog>}></Route>
       </Routes>
       <Footer />
     </div>
