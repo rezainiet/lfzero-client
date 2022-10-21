@@ -1,0 +1,26 @@
+[
+    {
+        "_id": 1,
+        "title": "JavaScript for Server Design",
+        "author": "Mark Jimmy",
+        "reads": "200",
+        "description": "JavaScript on the server-side or outside of the browser has opened a wide range of applications for the language. And that's one of the reasons it is one of the most popular right now. According to reports, JavaScript is being used on 97% of all websites. That's huge!",
+        "img": "https://i.ibb.co/Jvrpy1m/js.jpg"
+    },
+    {
+        "_id": 2,
+        "title": "Mathematics for all",
+        "author": "Srib Aldre",
+        "reads": "1075",
+        "description": "Enjoy the ongoing adventure of learning, teaching, and playing around with mathematics from pre-school to pre-calculus with the resources. Enjoy the ongoing adventure of learning, teaching, and playing around with mathematics from pre-school to pre-calculus with us.",
+        "img": "https://i.ibb.co/DGN5mf0/math.jpg"
+    },
+    {
+        "_id": 3,
+        "title": "Spoken English",
+        "author": "Hunk Anderson",
+        "reads": "566",
+        "description": "Learn how to feel relaxed and strong when speaking English. Our Mission is to Teach people to speak English easily, quickly, and automatically.Learn how to feel relaxed and strong when speaking English. Our Mission is to Teach people to speak English easily and effectively.",
+        "img": "https://i.ibb.co/qgkpxJd/english.webp"
+    }
+]
