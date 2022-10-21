@@ -8,19 +8,30 @@ import SignUp from "./components/Pages/SignUp/SignUp";
 import SingleCourse from "./components/Pages/SingleCourse/SingleCourse";
 import Footer from "./components/shared/Footer/Footer";
 import Navbar from "./components/shared/Navbar/Navbar";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Contact from "./components/Pages/Contact/Contact";
+import Blogs from "./components/Pages/Blog/Blogs";
+import AddBlog from "./components/Pages/Blog/AddBlog";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import MyCourses from "./components/Pages/StudentDashboard/MyCourses";
 
+import Instructor from "./components/Pages/Instructor/Instructor";
+
+import AdminDashboard from "./components/Pages/AdminDashboard/AdminDashboard";
+import AllUsers from "./components/Pages/AdminDashboard/AllUsers";
+import AllInstructor from "./components/Pages/AdminDashboard/AllInstructor";
+import AllAdmin from "./components/Pages/AdminDashboard/AllAdmin";
+import AllStudents from "./components/Pages/AdminDashboard/AllStudents";
+import MyProfile from "./components/Pages/StudentDashboard/MyProfile";
 
 function App() {
   useEffect(() => {
-    fetch('Course.json')
-      .then(res => res.json())
-      .then(data => console.log("data", data))
-  }, [])
+    fetch("Course.json")
+      .then((res) => res.json())
+      .then((data) => console.log("data", data));
+  }, []);
   return (
     <div>
       <Navbar />
@@ -31,12 +42,15 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
+        <Route path="/blog" element={<Blogs></Blogs>}></Route>
+        <Route path="/addblog" element={<AddBlog></AddBlog>}></Route>
         <Route path="/details/:id" element={<CourseDetails />} />
         <Route path="/course/:id" element={<SingleCourse />} />
-        {/* <Route path="/signUp" element={<SignUp />} / */}
         <Route path="/mycourses" element={<MyCourses />} />
+
       </Routes>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }
