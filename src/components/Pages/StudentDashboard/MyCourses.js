@@ -31,7 +31,7 @@ const MyCourses = () => {
             >
               Recommendations for other courses
             </h2>
-            <div className="grid sm:grid-cols-1 lg:grid-cols-1  gap-5">
+            <div className="grid sm:grid-cols-1 lg:grid-cols-1 m-10 gap-5">
               {courses.map((recommendCourse) => (
                 <RecommendCourse
                   recommendCourse={recommendCourse}
