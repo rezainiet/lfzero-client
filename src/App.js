@@ -11,7 +11,13 @@ import Navbar from "./components/shared/Navbar/Navbar";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Contact from "./components/Pages/Contact/Contact";
+import Blogs from "./components/Pages/Blog/Blogs";
+import AddBlog from "./components/Pages/Blog/AddBlog";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import MyCourses from "./components/Pages/StudentDashboard/MyCourses";
 
+import Instructor from "./components/Pages/Instructor/Instructor";
 
 import AdminDashboard from "./components/Pages/AdminDashboard/AdminDashboard";
 import AllUsers from "./components/Pages/AdminDashboard/AllUsers";
@@ -36,6 +42,11 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
+        <Route path="/blog" element={<Blogs></Blogs>}></Route>
+        <Route path="/addblog" element={<AddBlog></AddBlog>}></Route>
+        <Route path="/details/:id" element={<CourseDetails />} />
+        <Route path="/course/:id" element={<SingleCourse />} />
+        <Route path="/mycourses" element={<MyCourses />} />
 
       </Routes>
       <Footer />
@@ -45,5 +56,3 @@ function App() {
 }
 
 export default App;
-
-// hello sir
