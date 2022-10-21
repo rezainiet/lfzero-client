@@ -11,18 +11,25 @@ import Navbar from "./components/shared/Navbar/Navbar";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Contact from "./components/Pages/Contact/Contact";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import MyCourses from "./components/Pages/StudentDashboard/MyCourses";
+
 import Instructor from "./components/Pages/Instructor/Instructor";
 
+import AdminDashboard from "./components/Pages/AdminDashboard/AdminDashboard";
+import AllUsers from "./components/Pages/AdminDashboard/AllUsers";
+import AllInstructor from "./components/Pages/AdminDashboard/AllInstructor";
+import AllAdmin from "./components/Pages/AdminDashboard/AllAdmin";
+import AllStudents from "./components/Pages/AdminDashboard/AllStudents";
+import MyProfile from "./components/Pages/StudentDashboard/MyProfile";
 
 function App() {
   useEffect(() => {
-    fetch('Course.json')
-      .then(res => res.json())
-      .then(data => console.log("data", data))
-  }, [])
+    fetch("Course.json")
+      .then((res) => res.json())
+      .then((data) => console.log("data", data));
+  }, []);
   return (
     <div>
       <Navbar />
@@ -36,7 +43,7 @@ function App() {
         <Route path="/details/:id" element={<CourseDetails />} />
         <Route path="/course/:id" element={<SingleCourse />} />
         <Route path="/mycourses" element={<MyCourses />} />
-        <Route path="/instructor" element={<Instructor />} />
+
       </Routes>
       <Footer />
       <ToastContainer />
