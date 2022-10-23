@@ -22,8 +22,8 @@ const Footer = () => {
                     </div>
                     <div className='flex flex-col'>
                         <h4 className='text-[#F53289] font-bold text-[22px] mb-1.5 lg:mb-[27px] mt-4 sm:mt-0'>Resources</h4>
-                        <a className='text-white text-[14px] my-1' href=''>Blog</a>
-                        <a className='text-white font-[14px] my-1' href=''>Career</a>
+                        <Link to='/blog' className='text-white font-[14px] my-1' href=''>Blog</Link>
+                        <Link to='/career' className='text-white font-[14px] my-1' href=''>Career</Link>
                         <a className='text-white text-[14px] my-1' href=''>Support</a>
                     </div>
                     <div className='col-span-full lg:col-start-4 lg:col-end-6 flex flex-col'>
