@@ -4,7 +4,7 @@ import Course from "./Course";
 const TrendingCourses = () => {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/api/courses")
+    fetch("https://lfzero.vercel.app/api/courses")
       .then((res) => res.json())
       .then((data) => setCourses(data));
   }, []);

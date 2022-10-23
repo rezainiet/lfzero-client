@@ -27,7 +27,7 @@ const SignUp = () => {
         const phone = e.target.phone.value
         const date = e.target.date.value
         const data = { role, name, email, phone, date }
-        axios.post('http://localhost:4000/api/users', data)
+        axios.post('https://lfzero.vercel.app/api/users', data)
             .then(function (response) {
                 console.log(response);
             })
