@@ -7,7 +7,7 @@ const CourseDetails = () => {
     const [message, setMessage] = useState("");
 
     useEffect(() => {
-        const url = `https://lfzero.vercel.app/api/courses/${id}`
+        const url = `https://api-lfzero.vercel.app/api/courses/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setCourse(data));
@@ -33,7 +33,7 @@ const CourseDetails = () => {
     }
 
     const handleSubmitOrder = (price) => {
-        const url = `https://lfzero.vercel.app/create-checkout-session`
+        const url = `https://api-lfzero.vercel.app/create-checkout-session`
         fetch(url, {
             method: 'POST',
             body: JSON.stringify({ PRICE_ID: 'pr_', price })
