@@ -3,8 +3,11 @@ import heroImage1 from './../../../../assets/images/object.png'
 import playLogo from './../../../../assets/images/icons/play.svg'
 import './HeroSLider.css'
 import { useNavigate } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../../firebase.init';
 
 const HeroSlider = () => {
+    const [user] = useAuthState(auth);
     const navigate = useNavigate();
 
     return (
@@ -18,7 +21,7 @@ const HeroSlider = () => {
                                 <p className='my-5'>LFZero is an interesting platform that will teach <br /> you an elegant way</p>
                             </div>
                             <div className='flex gap-16 items-center mt-5'>
-                                <div><button className='bg-pink-500 px-12 py-2 rounded-full font-semibold' onClick={() => navigate('/login')}>Join Free</button></div>
+                                <div><button className={!user ? 'bg-pink-500 px-12 py-2 rounded-full font-semibold' : 'bg-gray-200 text-gray-700 px-12 py-2 rounded-full font-semibold'} onClick={() => navigate('/login')} disabled={user}>{user ? 'Joined' : 'Join Free'}</button></div>
                                 <div className='flex items-center gap-4'>
                                     <img src={playLogo} alt="Play logo" />
                                     <p>Watch how it works</p>

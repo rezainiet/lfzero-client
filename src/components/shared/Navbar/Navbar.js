@@ -4,11 +4,17 @@ import auth from "../../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import logo from "./../../../assets/images/icons/logo.png";
 import { signOut } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
+  console.log(user);
 
+
+  const handleClickSupport = () => {
+    toast.error('There is no support session running right now!')
+  }
   return (
     <div className="bg-[#5D10E3] px-20">
       <div className="flex justify-between items-center p-6 px-6 lg:px-0 container mx-auto">
@@ -48,6 +54,9 @@ const Navbar = () => {
             <a href="#">Category</a>
             <a href="#">Organization</a>
             <a href="#">Courses</a>
+
+
+            <a href="https://meet.google.com/izn-mjkc-mdc" rel="noopener noreferrer" target='_blank' onClick={handleClickSupport}>Support</a>
           </div>
         </div>
         <div
@@ -73,17 +82,7 @@ const Navbar = () => {
             className="bg-white shadow-md lg:bg-transparent lg:shadow-none py-10 lg:py-0 flex flex-col lg:items-center lg:flex-row px-6 space-y-4 
                     lg:space-y-0 lg:space-x-3"
           >
-            {user ? (
-              <>
-                {" "}
-                <button
-                  onClick={() => signOut(auth)}
-                  className="bg-white text-[#F53289] px-7 py-2 rounded-full"
-                >
-                  Logout
-                </button>{" "}
-              </>
-            ) : (
+            {!user && (
               <>
                 <button
                   onClick={() => navigate("/login")}
@@ -122,7 +121,7 @@ const Navbar = () => {
                       width="40px"
                       alt=""
                     ></img>
-                    <p>Maisha Maliha</p>
+                    <p>{user?.displayName ? user.displayName : user?.email.split('@')[0]}</p>
                   </div>
                 </li>
                 <li>
@@ -138,6 +137,17 @@ const Navbar = () => {
                 </li>
                 <li>
                   <a>My Wishlist</a>
+                </li>
+                <li>
+                  {
+                    user && < button
+                      onClick={() => signOut(auth)}
+                      className="bg-gray-300 text-[#F53289] px-7 py-2 rounded-full"
+                    >
+                      Logout
+                    </button>
+                  }
+
                 </li>
               </ul>
             </div>

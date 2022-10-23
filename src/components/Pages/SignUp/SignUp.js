@@ -10,12 +10,7 @@ const SignUp = () => {
     const [agree, setAgree] = useState(false)
     const [role, setRole] = useState('')
     const navigate = useNavigate()
-    const [
-        createUserWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, nameError] = useUpdateProfile(auth);
 
     const signUpFormSubmit = async (e) => {
@@ -34,8 +29,8 @@ const SignUp = () => {
             .catch(function (error) {
                 console.log(error);
             });
+        await createUserWithEmailAndPassword(email, pass);
         await updateProfile({ displayName: name });
-        await createUserWithEmailAndPassword(email, pass)
     }
 
     if (user) {

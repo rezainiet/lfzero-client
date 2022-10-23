@@ -10,7 +10,7 @@ const Reviews = () => {
   }, []);
   console.log(reviews);
   return (
-    <div className="my-28 mx-28">
+    <div className="my-28 mx-5 lg:mx-20">
       <div className="text-center ">
         <h2
           className="text-xl font-bold uppercase pb-5"
