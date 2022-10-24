@@ -55,7 +55,7 @@ const AddReview = () => {
 
 
                                 <div className=" mt-6">
-                                    <button type='submit' className="btn bg-pink-500 text-white hover:bg-pink-600">Submit Blog</button>
+                                    <button type='submit' className="btn bg-pink-500 text-white hover:bg-pink-600">Submit</button>
                                 </div>
                             </div>
                         </div>
