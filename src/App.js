@@ -34,6 +34,7 @@ import InstructorDashboard from "./components/Pages/Dashboard/InstructorDashboar
 import Overview from "./components/Pages/Dashboard/InstructorDashboard/Overview/Overview";
 import InstructorProfile from "./components/Pages/Dashboard/InstructorDashboard/IntructorProfile";
 import ShowAllStudent from "./components/Pages/Dashboard/InstructorDashboard/ShowAllStudent/ShowAllStudent";
+import MySingleCoursePlay from "./components/Pages/Dashboard/StudentDashboard/MySingleCoursePlay";
 
 function App() {
   useEffect(() => {
@@ -107,6 +108,8 @@ function App() {
           <Route path="Profile" element={<InstructorProfile />}></Route>
           <Route path="all-Student" element={<ShowAllStudent />}></Route>
         </Route>
+        {/* student dashboard */}
+        <Route path='/myCoursePlay' element={<MySingleCoursePlay />} />
 
         {/* <Route path="/jobPost" element={<JobPost />}></Route> */}
         <Route path="*" element={<NotFound />}></Route>
