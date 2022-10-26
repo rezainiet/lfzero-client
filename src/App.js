@@ -38,6 +38,7 @@ import MySingleCoursePlay from "./components/Pages/Dashboard/StudentDashboard/My
 import Reviews from "./components/Pages/Reviews/Reviews";
 import AddReview from "./components/Pages/Reviews/AddReview";
 import SearchCourse from "./components/Pages/SearchCourse/SearchCourse";
+import EnrollCourse from "./components/Pages/SingleCourse/EnrollCourse/EnrollCourse";
 
 function App() {
   useEffect(() => {
@@ -68,6 +69,7 @@ function App() {
         <Route path="/addReview" element={<AddReview></AddReview>}></Route>
         <Route path="/details/:id" element={<CourseDetails />} />
         <Route path="/course/:id" element={<SingleCourse />} />
+        <Route path="/enroll/:id" element={<EnrollCourse />} />
 
         <Route
           path="/mycourses"

@@ -1,27 +1,38 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import BigSpinner from '../../shared/Spinner/BigSpinner';
 
 const SingleCourse = () => {
     const { id } = useParams()
     const [active, setActive] = useState(-1)
     const [getSingleCourse, setSingleCourse] = useState({});
     const [getInstructor, setGetInstructor] = useState({});
+    const [isLoading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
 
     useEffect(() => {
+        setLoading(true);
         const url = `https://api-lfzero.vercel.app/api/courses/${id}`
         fetch(url)
             .then(res => res.json())
-            .then(data => setSingleCourse(data));
+            .then(data => {
+                setSingleCourse(data);
+                setLoading(false);
+            });
     }, [id]);
 
 
     useEffect(() => {
+        setLoading(true);
         const url = `https://api-lfzero.vercel.app/api/users/getUserByEmail/${getSingleCourse?.instructorEmail}`;
 
         fetch(url)
             .then(res => res.json())
-            .then(data => setGetInstructor(data));
+            .then(data => {
+                setGetInstructor(data);
+                setLoading(false);
+            });
 
     }, [getSingleCourse, getSingleCourse?.instructorEmail]);
 
@@ -36,12 +47,15 @@ const SingleCourse = () => {
             content: "Avoid the bad behave of english spoken."
         }
     ]
-    // useEffect(() => {
-    //     fetch('Course.json')
-    //     .then(res => res.json())
-    //     .then(data => console.log("data",data))
-    //     .catch(err => console.log(err))
-    //   }, [])
+
+
+    const handleNavigateCourseEnroll = (id) => {
+        navigate(`/enroll/${id}`)
+    }
+
+    if (isLoading) {
+        return <BigSpinner />
+    }
     return (
         <section className=''>
             <div className='max-w-7xl mx-auto flex flex-col-reverse md:grid grid-cols-10 gap-4 mb-20'>
@@ -132,7 +146,7 @@ const SingleCourse = () => {
                                 </div>
                             </div>
                             <p className='text-right text-2xl font-semibold mb-2'>$ {getSingleCourse?.price}</p>
-                            <button className='p-3 bg-[#643CF4] text-white rounded-lg w-full flex justify-center items-center hover:bg-[#5D10E3] duration-200'><span className='flex-1'>Course Enroll </span><i className="fa-solid fa-arrow-right-long"></i></button>
+                            <button className='p-3 bg-[#643CF4] text-white rounded-lg w-full flex justify-center items-center hover:bg-[#5D10E3] duration-200'><span className='flex-1' onClick={() => handleNavigateCourseEnroll(getSingleCourse.id)}>Course Enroll </span><i className="fa-solid fa-arrow-right-long"></i></button>
                         </div>
                     </div>
                     <p className='my-2 text-center'>Do you want to <a className='border-b-2 border-[#643CF4]' href="/contact" rel='noopener noreferrer' target='_blank'>contact us</a> about the course.</p>
