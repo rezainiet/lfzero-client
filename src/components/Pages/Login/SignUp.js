@@ -11,8 +11,9 @@ import axios from "axios";
 
 const SignUp = () => {
   const [agree, setAgree] = useState(false);
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("student");
   const navigate = useNavigate();
+  const [focused, setFocused] = useState(false);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, nameError] = useUpdateProfile(auth);
@@ -72,6 +73,7 @@ const SignUp = () => {
                     type="radio"
                     name="radio"
                     id="student"
+                    defaultChecked
                     required
                   ></input>
                 </span>
@@ -93,36 +95,37 @@ const SignUp = () => {
             <input
               name="name"
               className="text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2"
-              placeholder="Name"
+              placeholder="Your Name"
               type="text"
               required
             ></input>
             <input
               name="email"
               className="text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2"
-              placeholder="example@gmail.com"
+              placeholder="Your email"
               type="text"
               required
             ></input>
             <input
               name="password"
               className="text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2"
-              placeholder="**********"
+              placeholder="Password"
               type="password"
               required
             ></input>
             <input
               name="phone"
               className="text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2"
-              placeholder="015000000"
+              placeholder="Your Phone Number"
               type="number"
               required
             ></input>
             <input
               name="date"
+              onFocus={() => setFocused(!focused)}
               className="text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2"
-              placeholder="DD-MM-YYYY"
-              type="date"
+              placeholder="Date of birth"
+              type={focused ? 'date' : 'text'}
               required
             ></input>
             <div className="mt-2 mb-4">
@@ -141,11 +144,10 @@ const SignUp = () => {
             <p className="text-[#F53289]">{error?.message}</p>
             <input
               disabled={!agree}
-              className={`${
-                agree
-                  ? "bg-gradient-to-r from-[#f7d7e5] to-[#F53289] hover:from-[#F53289] hover:to-[#f7d7e5] text-white cursor-pointer"
-                  : "bg-gray-200 text-gray-500"
-              } text-md my-2 px-5 py-3 rounded-full outline-[#F53289] `}
+              className={`${agree
+                ? "bg-gradient-to-r from-[#f7d7e5] to-[#F53289] hover:from-[#F53289] hover:to-[#f7d7e5] text-white cursor-pointer"
+                : "bg-gray-200 text-gray-500"
+                } text-md my-2 px-5 py-3 rounded-full outline-[#F53289] `}
               value="Sign Up"
               type="submit"
             ></input>
