@@ -63,6 +63,8 @@ const EnrollCourse = () => {
                     email: user?.email,
                     courseName: course?.name,
                     courseID: course?.id,
+                    courseImage: course?.image,
+                    courseDescription: course?.description,
                     transactionID: response?.data?.balance_transaction,
                     transactionAmount: response?.data?.amount / 100,
                     billingDetails: response?.data?.billing_details,

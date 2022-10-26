@@ -1,9 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom';
+import BigSpinner from '../../../shared/Spinner/BigSpinner';
 
 const MySingleCoursePlay = () => {
     const play = useSelector(state => state.play.value)
-    console.log(play)
+    const { id } = useParams();
+    const [course, setCourse] = useState({});
+    const [isLoading, setLoading] = useState(false);
+
+    useEffect(() => {
+        setLoading(true);
+        const url = `http://localhost:4000/api/courses/${id}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                setCourse(data);
+                console.log(data);
+                setLoading(false);
+            })
+    }, [id]);
+
+    console.log(id)
+    console.log(play);
+
+    if (isLoading) {
+        return <BigSpinner />
+    };
+
     return (
         <div className='max-w-7xl mx-auto '>
             <div className='md:grid gap-5 grid-cols-10 pb-2 mx-2'>

@@ -118,6 +118,7 @@ function App() {
         </Route>
         {/* student dashboard */}
         <Route path='/myCoursePlay' element={<MySingleCoursePlay />} />
+        <Route path='/myCoursePlay/:id' element={<MySingleCoursePlay />} />
 
         {/* <Route path="/jobPost" element={<JobPost />}></Route> */}
         <Route path="*" element={<NotFound />}></Route>
