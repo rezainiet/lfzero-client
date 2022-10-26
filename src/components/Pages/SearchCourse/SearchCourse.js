@@ -8,7 +8,7 @@ const SearchCourse = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const url = `http://localhost:4000/api/courses/searchCourse/${state.input}`
+        const url = `https://api-lfzero.vercel.app/api/courses/searchCourse/${state.input}`
         fetch(url)
             .then(res => res.json())
             .then(data => {

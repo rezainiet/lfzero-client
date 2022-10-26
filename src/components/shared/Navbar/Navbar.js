@@ -16,7 +16,7 @@ const Navbar = () => {
 
   const handleSearchClick = async (event) => {
 
-    const url = `http://localhost:4000/api/courses/searchCourse/${searchInput}`
+    const url = `https://api-lfzero.vercel.app/api/courses/searchCourse/${searchInput}`
     await fetch(url)
       .then(res => res.json())
       .then(data => {

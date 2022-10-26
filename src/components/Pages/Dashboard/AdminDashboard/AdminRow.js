@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const AdminRow = ({ user }) => {
   const { name, email, phone, date, role } = user;
   const removeAdmin = (email) => {
-    fetch(`http://localhost:4000/api/users/${email}`, {
+    fetch(`https://api-lfzero.vercel.app/api/users/${email}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

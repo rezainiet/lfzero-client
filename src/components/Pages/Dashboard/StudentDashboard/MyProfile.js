@@ -6,7 +6,7 @@ const MyProfile = () => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
   useEffect(() => {
-    const url = `http://localhost:4000/api/users${id}`;
+    const url = `https://api-lfzero.vercel.app/api/users${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

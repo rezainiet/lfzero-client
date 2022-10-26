@@ -9,7 +9,7 @@ const SingleCourse = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:4000/api/courses/${id}`
+        const url = `https://api-lfzero.vercel.app/api/courses/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setSingleCourse(data));
@@ -17,7 +17,7 @@ const SingleCourse = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:4000/api/users/getUserByEmail/${getSingleCourse?.instructorEmail}`;
+        const url = `https://api-lfzero.vercel.app/api/users/getUserByEmail/${getSingleCourse?.instructorEmail}`;
 
         fetch(url)
             .then(res => res.json())
@@ -44,7 +44,7 @@ const SingleCourse = () => {
     //   }, [])
     return (
         <section className=''>
-            <div className='max-w-7xl mx-auto flex flex-col-reverse md:grid grid-cols-10 gap-4 mb-4'>
+            <div className='max-w-7xl mx-auto flex flex-col-reverse md:grid grid-cols-10 gap-4 mb-20'>
                 <div className='col-start-1 col-end-7 mt-3'>
                     <h2 className='text-3xl font-semibold my-2'>{getSingleCourse?.name}</h2>
                     <p>{getSingleCourse?.description}</p>

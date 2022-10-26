@@ -5,7 +5,7 @@ const UserRow = ({ user, refetch }) => {
   const { name, email, phone, role, date } = user;
 
   const makeAdmin = () => {
-    fetch(`http://localhost:4000/api/users/${email}`, {
+    fetch(`https://api-lfzero.vercel.app/api/users/${email}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title: "React PUT Request Example" }),
