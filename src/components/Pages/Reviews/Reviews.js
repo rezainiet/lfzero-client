@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import AddReview from "./AddReview";
 import Review from "./Review";
 
 const Reviews = () => {

@@ -35,6 +35,8 @@ import Overview from "./components/Pages/Dashboard/InstructorDashboard/Overview/
 import InstructorProfile from "./components/Pages/Dashboard/InstructorDashboard/IntructorProfile";
 import ShowAllStudent from "./components/Pages/Dashboard/InstructorDashboard/ShowAllStudent/ShowAllStudent";
 import MySingleCoursePlay from "./components/Pages/Dashboard/StudentDashboard/MySingleCoursePlay";
+import Reviews from "./components/Pages/Reviews/Reviews";
+import AddReview from "./components/Pages/Reviews/AddReview";
 
 function App() {
   useEffect(() => {
@@ -60,6 +62,8 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
         <Route path="/addblog" element={<AddBlog></AddBlog>}></Route>
+        <Route path="/reviews" element={<Reviews></Reviews>}></Route>
+        <Route path="/addReview" element={<AddReview></AddReview>}></Route>
         <Route path="/details/:id" element={<CourseDetails />} />
         <Route path="/course/:id" element={<SingleCourse />} />
 
