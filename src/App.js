@@ -28,7 +28,7 @@ import AllInstructor from "./components/Pages/Dashboard/AdminDashboard/AllInstru
 import AllAdmin from "./components/Pages/Dashboard/AdminDashboard/AllAdmin";
 import AllStudents from "./components/Pages/Dashboard/AdminDashboard/AllStudents";
 import MyProfile from "./components/Pages/Dashboard/StudentDashboard/MyProfile";
-import JobPost from "./components/Pages/Dashboard/AdminDashboard/JobPost/JobPost";
+// import JobPost from "./components/Pages/Dashboard/AdminDashboard/JobPost/JobPost";
 import RequiredAuth from "./components/Pages/Login/RequiredAuth";
 import InstructorDashboard from "./components/Pages/Dashboard/InstructorDashboard/InstructorDashboard";
 import Overview from "./components/Pages/Dashboard/InstructorDashboard/Overview/Overview";
@@ -36,7 +36,6 @@ import InstructorProfile from "./components/Pages/Dashboard/InstructorDashboard/
 import ShowAllStudent from "./components/Pages/Dashboard/InstructorDashboard/ShowAllStudent/ShowAllStudent";
 import Reviews from "./components/Pages/Reviews/Reviews";
 import AddReview from "./components/Pages/Reviews/AddReview";
-import SearchCourse from "./components/Pages/SearchCourse/SearchCourse";
 
 function App() {
   useEffect(() => {
@@ -66,9 +65,54 @@ function App() {
         <Route path="/addReview" element={<AddReview></AddReview>}></Route>
         <Route path="/details/:id" element={<CourseDetails />} />
         <Route path="/course/:id" element={<SingleCourse />} />
-        <Route path="/mycourses" element={<MyCourses />} />
-        <Route path="/search" element={<SearchCourse />} />
-        <Route path="/jobPost" element={<JobPost />} />
+
+        <Route
+          path="/mycourses"
+          element={
+            <RequiredAuth>
+              <MyCourses />
+            </RequiredAuth>
+          }
+        />
+        <Route
+          path="/myprofile"
+          element={
+            <RequiredAuth>
+              <MyProfile />
+            </RequiredAuth>
+          }
+        />
+
+        <Route
+          path="admin-dashboard"
+          element={
+            // <RequireAuth>
+            <AdminDashboard />
+            // </RequireAuth>
+          }
+        >
+          <Route index element={<AllUsers />}></Route>
+          <Route path="all-Instructor" element={<AllInstructor />}></Route>
+          <Route path="all-Admin" element={<AllAdmin />}></Route>
+          <Route path="all-Student" element={<AllStudents />}></Route>
+        </Route>
+
+        {/* Instructor dashboard Routes */}
+
+        <Route
+          path="instructor-dashboard"
+          element={
+            // <RequireAuth>
+            <InstructorDashboard />
+            // </RequireAuth>
+          }
+        >
+          <Route index element={<Overview />}></Route>
+          <Route path="Profile" element={<InstructorProfile />}></Route>
+          <Route path="all-Student" element={<ShowAllStudent />}></Route>
+        </Route>
+
+        {/* <Route path="/jobPost" element={<JobPost />}></Route> */}
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
