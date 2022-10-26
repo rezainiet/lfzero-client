@@ -8,20 +8,29 @@ import axios from 'axios';
 
 const SignUp = () => {
     const [agree, setAgree] = useState(false)
-    const [role, setRole] = useState('')
-    const navigate = useNavigate()
+    const [role, setRole] = useState('student');
+    const [focused, setFocused] = useState(false);
+    const navigate = useNavigate();
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, nameError] = useUpdateProfile(auth);
 
     const signUpFormSubmit = async (e) => {
         e.preventDefault()
         if (!role) { return toast.error('You should select your role') }
-        const name = e.target.name.value
-        const email = e.target.email.value
-        const pass = e.target.password.value
-        const phone = e.target.phone.value
-        const date = e.target.date.value
-        const data = { role, name, email, phone, date }
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const pass = e.target.password.value;
+        const phone = e.target.phone.value;
+        const date = e.target.date.value;
+        let image;
+        if (role === 'student') {
+            image = 'https://cdn-icons-png.flaticon.com/512/2491/2491056.png'
+        }
+        if (role === 'instructor') {
+            image = 'https://cdn.iconscout.com/icon/free/png-256/gym-instructor-1-1130596.png'
+        }
+        const data = { role, name, email, phone, date, image };
+
         axios.post('https://api-lfzero.vercel.app/api/users', data)
             .then(function (response) {
                 console.log(response);
@@ -45,7 +54,7 @@ const SignUp = () => {
                         <h2 className='text-2xl font-semibold text-[#5D10E3] mb-5'>Sign Up</h2>
                         <div className='flex justify-between'>
                             <div>
-                                <span className='mr-2'><input onClick={() => setRole("student")} type='radio' name='radio' id='student' required></input></span>
+                                <span className='mr-2'><input onClick={() => setRole("student")} type='radio' name='radio' id='student' defaultChecked required></input></span>
                                 <label htmlFor='student'>As a Student</label>
                             </div>
                             <div>
@@ -53,18 +62,18 @@ const SignUp = () => {
                                 <label htmlFor='instructor'>As an Instructor</label>
                             </div>
                         </div>
-                        <input name='name' className='text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2' placeholder='Name' type='text' required></input>
-                        <input name='email' className='text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2' placeholder='example@gmail.com' type='text' required></input>
-                        <input name='password' className='text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2' placeholder='**********' type='password' required></input>
-                        <input name='phone' className='text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2' placeholder='015000000' type='number' required></input>
-                        <input name='date' className='text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2' placeholder='DD-MM-YYYY' type='date' required></input>
+                        <input name='name' className='text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2' placeholder='Your Name' type='text' required></input>
+                        <input name='email' className='text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2' placeholder='Your email' type='text' required></input>
+                        <input name='password' className='text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2' placeholder='Password' type='password' required></input>
+                        <input name='phone' className='text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2' placeholder='Your number' type='text' required></input>
+                        <input name='date' className='text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2' placeholder='Date of birth' onFocus={() => setFocused(!focused)} type={focused ? 'date' : 'text'} required></input>
                         <div className='mt-2 mb-4'>
                             <input onClick={() => setAgree(!agree)} id='check' name='check' className='mr-3' type='checkbox'></input>
                             <label htmlFor='check'>I agree to </label>
                             <a href='#' className='text-[#F53289] font-medium'>the terms and conditions</a>
                         </div>
                         <p className='text-[#F53289]'>{error?.message}</p>
-                        <input disabled={!agree} className={`${agree ? 'bg-gradient-to-r from-[#f7d7e5] to-[#F53289] hover:from-[#F53289] hover:to-[#f7d7e5] text-white cursor-pointer' : 'bg-gray-200 text-gray-500'} text-md my-2 px-5 py-3 rounded-full outline-[#F53289] `} value='Sign Up' type='submit'></input>
+                        <input disabled={!agree} className={`${agree ? 'bg-gradient-to-r from-[#f7d7e5] to-[#F53289] hover:from-[#F53289] hover:to-[#f7d7e5] transition-all ease-in-out duration-300 text-white cursor-pointer' : 'bg-gray-200 text-gray-500'} text-md my-2 px-5 py-3 rounded-full outline-[#F53289] `} value='Sign Up' type='submit'></input>
                     </form>
                 </div>
                 <img className='hidden lg:block lg:w-[500px] xl:w-[600px] 2xl:flex-1' src={signUpBg} alt=''></img>

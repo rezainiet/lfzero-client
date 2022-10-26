@@ -16,12 +16,12 @@ const AllInstructor = () => {
     <div>
       <h2
         className=" text-center  p-10 pb-10 text-2xl font-bold text-purple-500"
-        // style={{ color: "#5D10E3" }}
+      // style={{ color: "#5D10E3" }}
       >
         Instructor List
       </h2>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           <thead>
             <tr>
               {/* <th></th> */}
@@ -36,7 +36,7 @@ const AllInstructor = () => {
               <InstructorRow
                 key={user._id}
                 user={user}
-                //    refetch={refetch}
+              //    refetch={refetch}
               ></InstructorRow>
             ))}
           </tbody>

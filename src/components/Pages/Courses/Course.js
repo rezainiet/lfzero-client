@@ -33,7 +33,7 @@ const Course = ({ course }) => {
         </h2>
         <p>{description}</p>
 
-        <div class="grid grid-cols-6 gap-4 pb-4">
+        <div className="grid grid-cols-6 gap-4 pb-4">
           <p
             className="font-bold col-start-1 col-end-3"
             style={{ color: "#5D10E3" }}

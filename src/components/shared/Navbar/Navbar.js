@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -9,8 +9,22 @@ import { toast } from "react-toastify";
 const Navbar = () => {
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
+  const [searchInput, setSearchInput] = useState('');
+  const [searchedData, setSearchedData] = useState([]);
   console.log(user);
 
+  const handleSearchClick = async (event) => {
+
+    const url = `http://localhost:4000/api/courses/searchCourse/${searchInput}`
+    await fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        setSearchedData(data)
+        if (data) {
+          navigate('/search', { state: { input: searchInput } });
+        }
+      })
+  }
 
   const handleClickSupport = () => {
     toast.error('There is no support session running right now!')
@@ -64,14 +78,15 @@ const Navbar = () => {
                  -z-10 lg:z-10 lg:h-auto lg:w-auto transition-all duration-300 ease-in-out"
         >
           <div
-            className="bg-white shadow-md lg:bg-transparent lg:shadow-none py-10 lg:py-0 flex flex-col lg:items-center lg:flex-row px-6 space-y-4 
-                    lg:space-y-0 lg:space-x-3"
-          >
+            className="bg-white shadow-md lg:bg-transparent lg:shadow-none py-10 lg:py-0 flex flex-col lg:items-center lg:flex-row px-6 space-y-4 lg:space-y-0 lg:space-x-3">
             <input
               type="text"
+              onChange={(e) => setSearchInput(e.target.value)}
+              name="searchBox"
               className="outline-none py-1 px-5 w-96 rounded-xl focus:ring-1 focus:ring-pink-500"
               placeholder="Search"
             />
+            <button onClick={handleSearchClick} className='text-white'>Search</button>
           </div>
         </div>
         <div

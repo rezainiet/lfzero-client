@@ -31,27 +31,27 @@ import bg from "../../../assets/images/unknown1.png";
 //     </div>
 
 //     <div>
-//     <iframe class="map"  width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Dhaka%20Bangladesh.%20mirpur&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+//     <iframe className="map"  width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Dhaka%20Bangladesh.%20mirpur&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 //     </div>
 
-//     <div class="icons-container">
+//     <div className="icons-container">
 
-// <div class="icons">
-//     <i class="fas fa-phone"></i>
+// <div className="icons">
+//     <i className="fas fa-phone"></i>
 //     <h3>our number</h3>
 //     <p>+880-18917-50682</p>
 //     <p>+880-15863-93242</p>
 // </div>
 
-// <div class="icons">
-//     <i class="fas fa-envelope"></i>
+// <div className="icons">
+//     <i className="fas fa-envelope"></i>
 //     <h3>our email</h3>
 //     <p>masumarifingmail.com</p>
 //     <p>alvinarifin61@gmail.com</p>
 // </div>
 
-// <div class="icons">
-//     <i class="fas fa-map-marker-alt"></i>
+// <div className="icons">
+//     <i className="fas fa-map-marker-alt"></i>
 //     <h3>our address</h3>
 //     <p>mirpur, Dhaka, Bangladesh - 1216</p>
 // </div>
@@ -89,7 +89,7 @@ const Contact = () => {
     <div className="">
       {/* className='bg-[url(https://www.tune.com/wp-content/themes/tune.com/img/desktop/hero/hero-contact-us.jpg?ver=1.1)] w-full bg-cover bg-center' */}
       <div
-        class="py-28"
+        className="py-28"
         bg-image
         style={{
           background: `url(${bg})`,
@@ -210,7 +210,7 @@ const Contact = () => {
         {/* <iframe className="bg-cover w-96 h-96"  id="gmap_canvas" src="https://maps.google.com/maps?q=Dhaka%20Bangladesh.%20mirpur&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe> */}
       </div>
 
-      {/* <div className="w-full"><div className="w-full"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=1000&amp;height=500&amp;hl=en&amp;q=dhka, bangladesh&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div></div> */}
+      {/* <div className="w-full"><div className="w-full"><iframe className="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=1000&amp;height=500&amp;hl=en&amp;q=dhka, bangladesh&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div></div> */}
     </div>
   );
 };
