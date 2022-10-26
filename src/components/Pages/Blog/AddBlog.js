@@ -15,7 +15,7 @@ const AddBlog = () => {
             description: event.target.description.value,
             img: event.target.img.value,
         }
-        console.log(addBlog);
+        // console.log(addBlog);
     }
 
     return (

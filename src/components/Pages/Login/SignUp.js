@@ -21,7 +21,7 @@ const SignUp = () => {
   // const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
-  console.log(from);
+  // console.log(from);
   //// for require auth implementation
 
   const signUpFormSubmit = async (e) => {
@@ -38,10 +38,10 @@ const SignUp = () => {
     axios
       .post("http://localhost:4000/api/users", data)
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
       })
       .catch(function (error) {
-        console.log(error);
+        // console.log(error);
       });
     await updateProfile({ displayName: name });
     await createUserWithEmailAndPassword(email, pass);

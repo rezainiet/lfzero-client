@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 const Navbar = () => {
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
-  console.log(user);
+  // console.log(user);
 
   const handleClickSupport = () => {
     toast.error("There is no support session running right now!");

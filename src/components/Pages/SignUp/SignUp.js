@@ -24,10 +24,10 @@ const SignUp = () => {
         const data = { role, name, email, phone, date }
         axios.post('https://api-lfzero.vercel.app/api/users', data)
             .then(function (response) {
-                console.log(response);
+                // console.log(response);
             })
             .catch(function (error) {
-                console.log(error);
+                // console.log(error);
             });
         await createUserWithEmailAndPassword(email, pass);
         await updateProfile({ displayName: name });
