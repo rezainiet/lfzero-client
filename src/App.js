@@ -15,12 +15,12 @@ import Blogs from "./components/Pages/Blog/Blogs";
 import AddBlog from "./components/Pages/Blog/AddBlog";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import MyCourses from "./components/Pages/StudentDashboard/MyCourses";
+import MyCourses from "./components/Pages/Dashboard/StudentDashboard/MyCourses";
 import PrivacyAndPolicy from "./components/Pages/PrivacyAndPolicy/PrivacyAndPolicy";
 import TermsAndCondition from "./components/Pages/TermsAndCondition/TermsAndCondition";
 import NotFound from "./components/Pages/NotFound/NotFound";
 
-import Instructor from "./components/Pages/Instructor/Instructor";
+//import Instructor from "./components/Pages/Dashboard/Instructor/Instructor";
 
 import AdminDashboard from "./components/Pages/AdminDashboard/AdminDashboard";
 import AllUsers from "./components/Pages/AdminDashboard/AllUsers";
@@ -29,7 +29,6 @@ import AllAdmin from "./components/Pages/AdminDashboard/AllAdmin";
 import AllStudents from "./components/Pages/AdminDashboard/AllStudents";
 import MyProfile from "./components/Pages/StudentDashboard/MyProfile";
 import JobPost from "./components/Pages/AdminDashboard/JobPost/JobPost";
-import AddReview from "./components/Pages/Reviews/AddReview";
 
 function App() {
   useEffect(() => {
@@ -50,8 +49,6 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/about" element={<About />} />
 
-
-
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
@@ -61,7 +58,6 @@ function App() {
         <Route path="/course/:id" element={<SingleCourse />} />
         <Route path="/mycourses" element={<MyCourses />} />
         <Route path="/jobPost" element={<JobPost />} />
-        <Route path="/addReview" element={<AddReview/>} />
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
