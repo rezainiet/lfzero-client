@@ -5,7 +5,6 @@ const Course = ({ course }) => {
   const { _id, name, photoURL, description, ratings, price } = course;
   const navigate = useNavigate();
 
-
   // const handleNavigate = (id) => {
   //   navigate(`/details/${id}`)
   // }
@@ -52,19 +51,19 @@ const Course = ({ course }) => {
           onClick={() => navigate(`/course/${_id}`)}
           className="btn btn-primary p-2 px-5 rounded text-white"
           style={{ backgroundColor: "#F53289" }}
-        // onClick={() => handleNavigate(_id)}
+          // onClick={() => handleNavigate(_id)}
         >
           Details
         </button>
         <button
           onClick={() => navigate(`/course/${_id}`)}
           className="btn btn-primary p-2 px-5 rounded text-white"
-          style={{ backgroundColor: "#00ff00" }}
-        // onClick={() => handleNavigate(_id)}
+          // style={{ backgroundColor: "#00ff00" }}
+          style={{ backgroundColor: "#5D10E3" }}
+          // onClick={() => handleNavigate(_id)}
         >
           Enroll Now
         </button>
-
       </div>
     </div>
   );

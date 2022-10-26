@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast, ToastContainer } from 'react-toastify';
-import auth from '../../../../firebase.init';
+import auth from '../../../../../firebase.init';
 const JobPost = () => {
     const [user] = useAuthState(auth);
 

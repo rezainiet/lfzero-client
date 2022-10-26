@@ -25,10 +25,9 @@ const Navbar = () => {
         }
       })
   }
-
   const handleClickSupport = () => {
-    toast.error('There is no support session running right now!')
-  }
+    toast.error("There is no support session running right now!");
+  };
   return (
     <div className="bg-[#5D10E3] px-20">
       <div className="flex justify-between items-center p-6 px-6 lg:px-0 container mx-auto">
@@ -69,8 +68,14 @@ const Navbar = () => {
             <a href="#">Organization</a>
             <a href="#">Courses</a>
 
-
-            <a href="https://meet.google.com/izn-mjkc-mdc" rel="noopener noreferrer" target='_blank' onClick={handleClickSupport}>Support</a>
+            <a
+              href="https://meet.google.com/izn-mjkc-mdc"
+              rel="noopener noreferrer"
+              target="_blank"
+              onClick={handleClickSupport}
+            >
+              Support
+            </a>
           </div>
         </div>
         <div
@@ -136,7 +141,11 @@ const Navbar = () => {
                       width="40px"
                       alt=""
                     ></img>
-                    <p>{user?.displayName ? user.displayName : user?.email.split('@')[0]}</p>
+                    <p>
+                      {user?.displayName
+                        ? user.displayName
+                        : user?.email.split("@")[0]}
+                    </p>
                   </div>
                 </li>
                 <li>
@@ -145,7 +154,7 @@ const Navbar = () => {
                   </button>
                 </li>
                 <li>
-                  <a onClick={() => navigate("/mycourses")}>My Learning</a>
+                  <a onClick={() => navigate("/mycourses")}>My Courses</a>
                 </li>
                 <li>
                   <a>My Cart</a>
@@ -154,15 +163,14 @@ const Navbar = () => {
                   <a>My Wishlist</a>
                 </li>
                 <li>
-                  {
-                    user && < button
+                  {user && (
+                    <button
                       onClick={() => signOut(auth)}
                       className="bg-gray-300 text-[#F53289] px-7 py-2 rounded-full"
                     >
                       Logout
                     </button>
-                  }
-
+                  )}
                 </li>
               </ul>
             </div>
