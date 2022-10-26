@@ -36,7 +36,7 @@ const Footer = () => {
                         <Link to='/support' className='text-white text-[14px] my-1'>Support</Link>
                         <Link to='/complain-box' className='text-white text-[14px] my-1'>Complain Box</Link>
                         <Link to='/success-story' className='text-white text-[14px] my-1'>Success Story</Link>
-                        <Link to='/complain-box' className='text-white text-[14px] my-1'>Learner Feedback & Reviews</Link>
+                        <Link to='/reviews' className='text-white text-[14px] my-1'>Learner Feedback & Reviews</Link>
                     </div>
                     <div className='col-span-full lg:col-start-4 lg:col-end-6 flex flex-col'>
                         <h4 className='text-[#F53289] font-bold text-[22px] mb-1.5 lg:mb-[27px] mt-4 sm:mt-[28px] lg:mt-0'>Subscribe</h4>

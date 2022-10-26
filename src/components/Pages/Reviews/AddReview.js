@@ -35,13 +35,13 @@ const AddReview = () => {
                                     <label className="label">
                                         <span className="label-text">Share your Experience</span>
                                     </label>
-                                    <textarea name="description" id="" cols="30" rows="30" placeholder="Write Something" className="input input-bordered py-2"></textarea>
+                                    <textarea name="description" id="" cols="30" rows="30" placeholder="Write about Course" className="input input-bordered py-2"></textarea>
                                 </div>
 
 
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Rating</span>
+                                        <span className="label-text">Feedback Rating</span>
                                     </label>
                                     <div class="rating">
                                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
