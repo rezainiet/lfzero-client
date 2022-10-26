@@ -34,8 +34,10 @@ import InstructorDashboard from "./components/Pages/Dashboard/InstructorDashboar
 import Overview from "./components/Pages/Dashboard/InstructorDashboard/Overview/Overview";
 import InstructorProfile from "./components/Pages/Dashboard/InstructorDashboard/IntructorProfile";
 import ShowAllStudent from "./components/Pages/Dashboard/InstructorDashboard/ShowAllStudent/ShowAllStudent";
+import MySingleCoursePlay from "./components/Pages/Dashboard/StudentDashboard/MySingleCoursePlay";
 import Reviews from "./components/Pages/Reviews/Reviews";
 import AddReview from "./components/Pages/Reviews/AddReview";
+import SearchCourse from "./components/Pages/SearchCourse/SearchCourse";
 
 function App() {
   useEffect(() => {
@@ -59,6 +61,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
+        <Route path="/search" element={<SearchCourse />} />
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
         <Route path="/addblog" element={<AddBlog></AddBlog>}></Route>
         <Route path="/reviews" element={<Reviews></Reviews>}></Route>
@@ -111,6 +114,8 @@ function App() {
           <Route path="Profile" element={<InstructorProfile />}></Route>
           <Route path="all-Student" element={<ShowAllStudent />}></Route>
         </Route>
+        {/* student dashboard */}
+        <Route path='/myCoursePlay' element={<MySingleCoursePlay />} />
 
         {/* <Route path="/jobPost" element={<JobPost />}></Route> */}
         <Route path="*" element={<NotFound />}></Route>

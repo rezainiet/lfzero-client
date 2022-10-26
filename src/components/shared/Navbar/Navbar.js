@@ -12,6 +12,7 @@ const Navbar = () => {
   const [searchInput, setSearchInput] = useState('');
   const [searchedData, setSearchedData] = useState([]);
   console.log(user);
+  // console.log(user);
 
   const handleSearchClick = async (event) => {
 

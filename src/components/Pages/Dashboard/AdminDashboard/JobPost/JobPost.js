@@ -16,7 +16,7 @@ const JobPost = () => {
             salaryRange: event.target.salaryRange.value,
             skillRequirement: event.target.skillRequirement.value,
         }
-        console.log(jobDetails);
+        // console.log(jobDetails);
     }
 
     return (
