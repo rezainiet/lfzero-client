@@ -98,13 +98,12 @@ const Contact = () => {
           backgroundSize: "cover",
           height: "96",
         }}
-        className="py-5 text-white"
       >
         <div className="lg:ml-28 py-10 ml-8">
-          <h1 className="font-libreBasker font-medium text-6xl">Contact Us</h1>
+          <h1 className="font-libreBasker font-medium text-6xl text-white">Contact Us</h1>
           <h5 className="font-openSans font-medium text-xl py-5">
             {" "}
-            <span className="font-montserrat font-light  text-xl">
+            <span className="font-montserrat font-light  text-xl text-gray-300">
               Education is also how you learn to change <br /> with time, so
               that you don’t miss <br /> what time has best to offer.
             </span>

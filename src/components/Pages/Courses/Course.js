@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
 const Course = ({ course }) => {
-  const { _id, name, photoURL, description, ratings, price } = course;
+  const { id, name, photoURL, description, ratings, price } = course;
   const navigate = useNavigate();
 
   // const handleNavigate = (id) => {
@@ -48,19 +48,19 @@ const Course = ({ course }) => {
         </div>
 
         <button
-          onClick={() => navigate(`/course/${_id}`)}
+          onClick={() => navigate(`/course/${id}`)}
           className="btn btn-primary p-2 px-5 rounded text-white"
           style={{ backgroundColor: "#F53289" }}
-          // onClick={() => handleNavigate(_id)}
+        // onClick={() => handleNavigate(_id)}
         >
           Details
         </button>
         <button
-          onClick={() => navigate(`/course/${_id}`)}
+          onClick={() => navigate(`/course/${id}`)}
           className="btn btn-primary p-2 px-5 rounded text-white"
           // style={{ backgroundColor: "#00ff00" }}
           style={{ backgroundColor: "#5D10E3" }}
-          // onClick={() => handleNavigate(_id)}
+        // onClick={() => handleNavigate(_id)}
         >
           Enroll Now
         </button>

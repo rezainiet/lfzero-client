@@ -35,7 +35,14 @@ const SignUp = () => {
     const pass = e.target.password.value;
     const phone = e.target.phone.value;
     const date = e.target.date.value;
-    const data = { role, name, email, phone, date };
+    let image;
+    if (role === 'student') {
+      image = 'https://cdn-icons-png.flaticon.com/512/2491/2491056.png'
+    };
+    if (role === 'instructor') {
+      image = 'https://cdn.iconscout.com/icon/free/png-256/gym-instructor-1-1130596.png'
+    }
+    const data = { role, name, email, phone, date, image };
     axios
       .post("http://localhost:4000/api/users", data)
       .then(function (response) {
@@ -117,7 +124,7 @@ const SignUp = () => {
               name="phone"
               className="text-md my-2 px-5 py-3 rounded-full outline-[#5D10E3] text-gray border-gray border-2"
               placeholder="Your Phone Number"
-              type="number"
+              type="text"
               required
             ></input>
             <input
