@@ -42,7 +42,7 @@ const Course = ({ course }) => {
           </p>
           <p
             className="col-end-8 col-span-3 text-xs"
-            style={{ color: "#F48C08" }}
+            style={{ color: "#fe8a3c" }}
           >
             {ratings}
           </p>
@@ -59,7 +59,7 @@ const Course = ({ course }) => {
         <button
           onClick={() => navigate(`/course/${_id}`)}
           className="btn btn-primary p-2 px-5 rounded text-white"
-          style={{ backgroundColor: "#00ff00" }}
+          style={{ backgroundColor: "#5d10e3" }}
         // onClick={() => handleNavigate(_id)}
         >
           Enroll Now

@@ -29,6 +29,7 @@ import AllAdmin from "./components/Pages/AdminDashboard/AllAdmin";
 import AllStudents from "./components/Pages/AdminDashboard/AllStudents";
 import MyProfile from "./components/Pages/StudentDashboard/MyProfile";
 import JobPost from "./components/Pages/AdminDashboard/JobPost/JobPost";
+import Complain from "./components/Pages/Complain/Complain";
 
 function App() {
   useEffect(() => {
@@ -60,6 +61,7 @@ function App() {
         <Route path="/course/:id" element={<SingleCourse />} />
         <Route path="/mycourses" element={<MyCourses />} />
         <Route path="/jobPost" element={<JobPost />} />
+        <Route path="comlain" element={<Complain/>}/>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
