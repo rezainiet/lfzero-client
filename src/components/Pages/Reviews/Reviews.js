@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import AddReview from "./AddReview";
 import Review from "./Review";
 
 const Reviews = () => {
@@ -8,9 +9,9 @@ const Reviews = () => {
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
-  console.log(reviews);
+  // console.log(reviews);
   return (
-    <div className="my-28 mx-28">
+    <div className="my-28 mx-5 lg:mx-20">
       <div className="text-center ">
         <h2
           className="text-xl font-bold uppercase pb-5"

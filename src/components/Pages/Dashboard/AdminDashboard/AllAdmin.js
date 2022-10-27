@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import StudentRow from "./StudentRow";
-const AllStudents = () => {
+import AdminRow from "./AdminRow";
+
+const AllAdmin = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -15,15 +16,14 @@ const AllStudents = () => {
     <div>
       <h2
         className=" text-center  p-10 pb-10 text-2xl font-bold text-purple-500"
-        // style={{ color: "#5D10E3" }}
+      // style={{ color: "#5D10E3" }}
       >
-        Students List
+        Admin List
       </h2>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           <thead>
             <tr>
-              {/* <th></th> */}
               <th className="text-purple-500 text-base normal-case">Name</th>
               <th className="text-purple-500 text-base normal-case">Email</th>
               <th className="text-purple-500 text-base normal-case">Phone</th>
@@ -32,11 +32,11 @@ const AllStudents = () => {
           </thead>
           <tbody>
             {users.map((user) => (
-              <StudentRow
+              <AdminRow
                 key={user._id}
                 user={user}
-                //    refetch={refetch}
-              ></StudentRow>
+              //    refetch={refetch}
+              ></AdminRow>
             ))}
           </tbody>
         </table>
@@ -45,4 +45,4 @@ const AllStudents = () => {
   );
 };
 
-export default AllStudents;
+export default AllAdmin;

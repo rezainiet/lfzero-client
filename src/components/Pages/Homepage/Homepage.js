@@ -3,7 +3,7 @@ import FreeCourses from "../Courses/FreeCourses";
 import SkillDevlopment from "../Courses/SkillDevlopment";
 import TrendingCourses from "../Courses/TrendingCourses";
 import SchoolCollege from "../Courses/SchoolCollege";
-import Reviews from "../Reviews.js/Reviews";
+import Reviews from "../Reviews/Reviews";
 import Devices from "../Devices/Devices";
 import HeroSlider from "./HeroSlider/HeroSlider";
 import Statistics from "./Statistics/Statistics";

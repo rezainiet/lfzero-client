@@ -22,13 +22,14 @@ const Partners = () => {
                     </p>
                 </div>
             </div>
-            <div className='grid grid-cols-3 lg:grid-cols-6 gap-5 mt-12'>
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 mt-12'>
                 <div className='flex items-center justify-center'><img src={partner1} alt="" /></div>
                 <div className='flex items-center justify-center'><img src={partner2} alt="" /></div>
                 <div className='flex items-center justify-center'><img src={partner3} alt="" /></div>
                 <div className='flex items-center justify-center'><img src={partner4} alt="" /></div>
                 <div className='flex items-center justify-center'><img src={partner5} alt="" /></div>
                 <div className='flex items-center justify-center'><img src={partner6} alt="" /></div>
+                <input type="range" min='10' max='100' defaultValue='70' />
             </div>
         </div>
     );

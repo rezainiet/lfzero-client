@@ -6,12 +6,21 @@ const CourseDetails = () => {
   const [course, setCourse] = useState({});
   const [message, setMessage] = useState("");
 
+<<<<<<< HEAD
   useEffect(() => {
     const url = `http://localhost:4000/api/courses/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setCourse(data));
   }, [id]);
+=======
+    useEffect(() => {
+        const url = `https://api-lfzero.vercel.app/api/courses/${id}`
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setCourse(data));
+    }, [id]);
+>>>>>>> e21ada3f69b41e31d5392b067ec6893a648ff18f
 
   useEffect(() => {
     // Check to see if this is a redirect back from Checkout
@@ -21,10 +30,23 @@ const CourseDetails = () => {
       setMessage("Order placed! You will receive an email confirmation.");
     }
 
+<<<<<<< HEAD
     if (query.get("canceled")) {
       setMessage(
         "Order canceled -- continue to shop around and checkout when you're ready."
       );
+=======
+    const handleSubmitOrder = (price) => {
+        const url = `https://api-lfzero.vercel.app/create-checkout-session`
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({ PRICE_ID: 'pr_', price })
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+            })
+>>>>>>> e21ada3f69b41e31d5392b067ec6893a648ff18f
     }
   }, []);
 

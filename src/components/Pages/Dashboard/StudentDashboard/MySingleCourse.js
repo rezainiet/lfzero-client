@@ -1,9 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux'
+import { changePlay } from "../../../../Redux/Slice/MySingleCoursePlaySlice";
 
 const MySingleCourse = ({ singleCourse }) => {
-    const { _id, name, img, des, rating, price } = singleCourse;
     const navigate = useNavigate();
+    const dispatch = useDispatch()
+    const buttonClick = async (course) => {
+        await dispatch(changePlay(course))
+        await localStorage.setItem('playVideo', JSON.stringify(course))
+        await navigate('/myCoursePlay')
+    }
+    const { _id, name, img, des, rating, price } = singleCourse;
     return (
         // <div className="col-span-3 ">
         <div className="card lg:max-w-3xl bg-base-100 shadow-xl pb-5 rounded">
@@ -28,7 +36,8 @@ const MySingleCourse = ({ singleCourse }) => {
                 <button
                     className="btn btn-primary p-2 px-5 rounded text-white"
                     style={{ backgroundColor: "#F53289" }}
-                    onClick={() => navigate(`/${name}`)}
+                    // onClick={() => navigate(`/${name}`)}
+                    onClick={() => buttonClick(singleCourse)}
                 >
                     Start Course
                 </button>

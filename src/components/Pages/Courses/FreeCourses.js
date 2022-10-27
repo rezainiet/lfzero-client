@@ -4,12 +4,12 @@ import Course from "./Course";
 const FreeCourses = () => {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/api/courses")
+    fetch("https://api-lfzero.vercel.app/api/courses")
       .then((res) => res.json())
       .then((data) => setCourses(data));
   }, []);
   return (
-    <div className="my-28 mx-28">
+    <div className="my-28 mx-5 lg:mx-20">
       <div className="text-center ">
         <h2
           className="text-xl font-bold uppercase pb-5"
