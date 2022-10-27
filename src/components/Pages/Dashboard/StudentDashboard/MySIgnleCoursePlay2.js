@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import BigSpinner from '../../../shared/Spinner/BigSpinner';
 
-const MySingleCoursePlay = () => {
+const MySIngleCoursePlay2 = () => {
     const play = useSelector(state => state.play.value)
     const { id } = useParams();
     const [course, setCourse] = useState({});
@@ -62,4 +62,4 @@ const MySingleCoursePlay = () => {
     );
 };
 
-export default MySingleCoursePlay;
+export default MySIngleCoursePlay2;

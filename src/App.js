@@ -39,6 +39,8 @@ import Reviews from "./components/Pages/Reviews/Reviews";
 import AddReview from "./components/Pages/Reviews/AddReview";
 import SearchCourse from "./components/Pages/SearchCourse/SearchCourse";
 import EnrollCourse from "./components/Pages/SingleCourse/EnrollCourse/EnrollCourse";
+import MySIgnleCoursePlay2 from "./components/Pages/Dashboard/StudentDashboard/MySIgnleCoursePlay2";
+import Complain from "./components/Pages/Reviews/Complain/Complain";
 
 function App() {
   useEffect(() => {
@@ -70,6 +72,7 @@ function App() {
         <Route path="/details/:id" element={<CourseDetails />} />
         <Route path="/course/:id" element={<SingleCourse />} />
         <Route path="/enroll/:id" element={<EnrollCourse />} />
+        <Route path="/complain" element={<Complain />} />
 
         <Route
           path="/mycourses"
@@ -118,7 +121,7 @@ function App() {
         </Route>
         {/* student dashboard */}
         <Route path='/myCoursePlay' element={<MySingleCoursePlay />} />
-        <Route path='/myCoursePlay/:id' element={<MySingleCoursePlay />} />
+        <Route path='/myCoursePlay/:id' element={<MySIgnleCoursePlay2 />} />
 
         {/* <Route path="/jobPost" element={<JobPost />}></Route> */}
         <Route path="*" element={<NotFound />}></Route>
