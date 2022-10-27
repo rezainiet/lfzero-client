@@ -39,6 +39,7 @@ import Reviews from "./components/Pages/Reviews/Reviews";
 import AddReview from "./components/Pages/Reviews/AddReview";
 import SearchCourse from "./components/Pages/SearchCourse/SearchCourse";
 import EnrollCourse from "./components/Pages/SingleCourse/EnrollCourse/EnrollCourse";
+import RefundPolicy from "./components/Pages/RefundPolicy/RefundPolicy";
 
 function App() {
   useEffect(() => {
@@ -70,6 +71,7 @@ function App() {
         <Route path="/details/:id" element={<CourseDetails />} />
         <Route path="/course/:id" element={<SingleCourse />} />
         <Route path="/enroll/:id" element={<EnrollCourse />} />
+        <Route path="/RefundPolicy" element={<RefundPolicy />} />
 
         <Route
           path="/mycourses"
