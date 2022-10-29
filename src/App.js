@@ -34,14 +34,13 @@ import InstructorDashboard from "./components/Pages/Dashboard/InstructorDashboar
 import Overview from "./components/Pages/Dashboard/InstructorDashboard/Overview/Overview";
 import InstructorProfile from "./components/Pages/Dashboard/InstructorDashboard/IntructorProfile";
 import ShowAllStudent from "./components/Pages/Dashboard/InstructorDashboard/ShowAllStudent/ShowAllStudent";
-import MySingleCoursePlay from "./components/Pages/Dashboard/StudentDashboard/MySingleCoursePlay";
 import Reviews from "./components/Pages/Reviews/Reviews";
 import AddReview from "./components/Pages/Reviews/AddReview";
 import SearchCourse from "./components/Pages/SearchCourse/SearchCourse";
 import EnrollCourse from "./components/Pages/SingleCourse/EnrollCourse/EnrollCourse";
-import MySIgnleCoursePlay2 from "./components/Pages/Dashboard/StudentDashboard/MySIgnleCoursePlay2";
 import Complain from "./components/Pages/Reviews/Complain/Complain";
 import RefundPolicy from "./components/Pages/RefundPolicy/RefundPolicy";
+import CoursePlay from "./components/Pages/Dashboard/StudentDashboard/CoursePlay";
 
 function App() {
   useEffect(() => {
@@ -122,8 +121,8 @@ function App() {
           <Route path="all-Student" element={<ShowAllStudent />}></Route>
         </Route>
         {/* student dashboard */}
-        <Route path='/myCoursePlay' element={<MySingleCoursePlay />} />
-        <Route path='/myCoursePlay/:id' element={<MySIgnleCoursePlay2 />} />
+        {/* <Route path='/myCoursePlay' element={<MySingleCoursePlay />} /> */}
+        <Route path='/myCoursePlay/:id' element={<CoursePlay />} />
 
         {/* <Route path="/jobPost" element={<JobPost />}></Route> */}
         <Route path="*" element={<NotFound />}></Route>
