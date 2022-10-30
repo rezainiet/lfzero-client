@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+import BigSpinner from '../../shared/Spinner/BigSpinner';
 
 const SearchCourse = () => {
     const { state } = useLocation();
     console.log(state);
     const [searchedData, setSearchedData] = useState([]);
     const navigate = useNavigate();
+    const [isLoading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         const url = `https://api-lfzero.vercel.app/api/courses/searchCourse/${state.input}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                setSearchedData(data)
+                setSearchedData(data);
+                setLoading(false);
             })
     }, [state, state.input]);
 
@@ -20,6 +24,10 @@ const SearchCourse = () => {
     const handleNavigateCheckOut = (id) => {
         navigate(`/course/${id}`)
     };
+
+    if (isLoading) {
+        return <BigSpinner />
+    }
 
     console.log(searchedData);
     return (

@@ -97,42 +97,42 @@ const EnrollCourse = () => {
 
     return (
         <div>
-            <html class="border-l" lang="en">
+            <html className="border-l" lang="en">
                 <body className='max-h-full items-center grid place-items-center w-full justify-center'>
-                    <div class="h-screen grid grid-cols-3  items-center ">
+                    <div className="h-screen grid grid-cols-3  items-center ">
                         <div></div>
-                        <div class="col-span-1 bg-gray-200 bg-opacity-30 lg:block hidden">
-                            <h1 class="py-6 border-b-2 text-xl text-gray-600 px-8">Order Summary</h1>
-                            <ul class="py-6 border-b space-y-6 px-8">
-                                <li class="grid grid-cols-6 gap-2 border-b-1">
-                                    <div class="col-span-1 self-center">
-                                        <img src={course?.photoURL} alt="Product" class="rounded w-full" />
+                        <div className="col-span-1 bg-gray-200 bg-opacity-30 lg:block hidden">
+                            <h1 className="py-6 border-b-2 text-xl text-gray-600 px-8">Order Summary</h1>
+                            <ul className="py-6 border-b space-y-6 px-8">
+                                <li className="grid grid-cols-6 gap-2 border-b-1">
+                                    <div className="col-span-1 self-center">
+                                        <img src={course?.photoURL} alt="Product" className="rounded w-full" />
                                     </div>
-                                    <div class="flex flex-col col-span-3 pt-2">
-                                        <span class="text-gray-600 text-md font-semi-bold">{
+                                    <div className="flex flex-col col-span-3 pt-2">
+                                        <span className="text-gray-600 text-md font-semi-bold">{
                                             course?.name?.length > 25 ? `${course?.name?.slice(0, 20)}...` : course?.name
                                         }</span>
-                                        <span class="text-gray-400 text-sm inline-block pt-2">{course?.instructor}</span>
+                                        <span className="text-gray-400 text-sm inline-block pt-2">{course?.instructor}</span>
                                     </div>
-                                    <div class="col-span-2 pt-3">
-                                        <div class="flex items-center space-x-2 text-sm justify-between">
-                                            <span class="text-gray-400">1 x {course?.price}</span>
-                                            <span class="text-pink-400 font-semibold inline-block">${course?.price}</span>
+                                    <div className="col-span-2 pt-3">
+                                        <div className="flex items-center space-x-2 text-sm justify-between">
+                                            <span className="text-gray-400">1 x {course?.price}</span>
+                                            <span className="text-pink-400 font-semibold inline-block">${course?.price}</span>
                                         </div>
                                     </div>
                                 </li>
                             </ul>
-                            <div class="px-8 border-b">
-                                <div class="flex justify-between py-4 text-gray-600">
+                            <div className="px-8 border-b">
+                                <div className="flex justify-between py-4 text-gray-600">
                                     <span>Subtotal</span>
-                                    <span class="font-semibold text-pink-500">${course?.price}</span>
+                                    <span className="font-semibold text-pink-500">${course?.price}</span>
                                 </div>
-                                <div class="flex justify-between py-4 text-gray-600">
+                                <div className="flex justify-between py-4 text-gray-600">
                                     <span>Shipping</span>
-                                    <span class="font-semibold text-pink-500">Not valid</span>
+                                    <span className="font-semibold text-pink-500">Not valid</span>
                                 </div>
                             </div>
-                            <div class="font-semibold text-xl px-8 flex justify-between py-8 text-gray-600">
+                            <div className="font-semibold text-xl px-8 flex justify-between py-8 text-gray-600">
                                 <span>Total</span>
                                 <span>${course?.price}</span>
                             </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useInsertionEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import logo from "./../../../assets/images/icons/logo.png";
@@ -26,9 +26,16 @@ const Navbar = () => {
                     navigate('/search', { state: { input: searchInput } });
                 }
             })
-    }
+    };
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            handleSearchClick();
+        }
+    };
+
     const handleClickSupport = () => {
-        toast.error("There is no support session running right now!");
+        toast.success("You are in now Live Support session!");
     };
 
     return (
@@ -53,12 +60,12 @@ const Navbar = () => {
                     <label htmlFor="hamburger"
                         className="peer-checked:hamburger block relative cursor-pointer lg:hidden border-2 border-gray-300 peer-checked:border-2
                  peer-checked:border-white p-1 rounded-md transition-all">
-                        {check ? <i class="fa-solid fa-x text-white font-bold px-1 text-xl"></i>
+                        {check ? <i className="fa-solid fa-x text-white font-bold px-1 text-xl"></i>
                             :
                             <>
                                 {/* <div className="m-auto w-4 sm:w-6 h-1 rounded bg-gray-300 transition-all duration-300"></div>
                 <div className="m-auto mt-2 w-4 sm:w-6 h-1 rounded bg-gray-300 transition-all duration-300"></div> */}
-                                <i class="fa-solid fa-bars text-white font-bold px-1 text-xl"></i>
+                                <i className="fa-solid fa-bars text-white font-bold px-1 text-xl"></i>
                             </>}
                     </label>
                 </div>
@@ -70,8 +77,8 @@ const Navbar = () => {
                         <div
                             className="text-white lg:bg-transparent flex flex-col lg:items-center lg:flex-row lg:px-4 xl:px-6 space-y-2 pt-3 lg:pt-0 lg:space-y-0 lg:space-x-3">
                             <a className='lg:text-sm xl:text-md' href="#">Category</a>
-                            <a className='lg:text-sm xl:text-md' href="#">Organization</a>
-                            <a className='lg:text-sm xl:text-md' href="#">Courses</a>
+                            {/* <a className='lg:text-sm xl:text-md' href="#">Organization</a> */}
+                            <Link className='lg:text-sm xl:text-md' to="allCourses">Courses</Link>
                             <a className='lg:text-sm xl:text-md' href="https://meet.google.com/izn-mjkc-mdc" rel="noopener noreferrer" target='_blank' onClick={handleClickSupport}>Support</a>
                         </div>
                     </div>
@@ -85,6 +92,7 @@ const Navbar = () => {
                                 type="text"
                                 className="outline-none py-1 px-5 w-72 sm:w-96 lg:w-60 xl:w-96 rounded-xl focus:ring-1 focus:ring-pink-500"
                                 placeholder="Search"
+                                onKeyDown={handleKeyDown}
                             />
                             <button onClick={handleSearchClick} className='text-white'>Search</button>
                         </div>

@@ -41,6 +41,7 @@ import EnrollCourse from "./components/Pages/SingleCourse/EnrollCourse/EnrollCou
 import Complain from "./components/Pages/Reviews/Complain/Complain";
 import RefundPolicy from "./components/Pages/RefundPolicy/RefundPolicy";
 import CoursePlay from "./components/Pages/Dashboard/StudentDashboard/CoursePlay";
+import AllCourses from "./components/Pages/Courses/AllCourses/AllCourses";
 
 function App() {
   useEffect(() => {
@@ -68,18 +69,49 @@ function App() {
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
         <Route path="/addblog" element={<AddBlog></AddBlog>}></Route>
         <Route path="/reviews" element={<Reviews></Reviews>}></Route>
-        <Route path="/addReview" element={<AddReview></AddReview>}></Route>
         <Route path="/details/:id" element={<CourseDetails />} />
         <Route path="/course/:id" element={<SingleCourse />} />
-        <Route path="/enroll/:id" element={<EnrollCourse />} />
-        <Route path="/complain" element={<Complain />} />
         <Route path="/RefundPolicy" element={<RefundPolicy />} />
+        <Route path="/allCourses" element={<AllCourses />} />
 
+        <Route
+          path="/addReview"
+          element={
+            <RequiredAuth>
+              <AddReview />
+            </RequiredAuth>
+          }
+        />
+        <Route
+          path="/complain"
+          element={
+            <RequiredAuth>
+              <Complain />
+            </RequiredAuth>
+          }
+        />
         <Route
           path="/mycourses"
           element={
             <RequiredAuth>
               <MyCourses />
+            </RequiredAuth>
+          }
+        />
+        <Route
+          path="/enroll/:id"
+          element={
+            <RequiredAuth>
+              <EnrollCourse />
+            </RequiredAuth>
+          }
+        />
+
+        <Route
+          path="/myCoursePlay/:id"
+          element={
+            <RequiredAuth>
+              <CoursePlay />
             </RequiredAuth>
           }
         />
@@ -122,7 +154,6 @@ function App() {
         </Route>
         {/* student dashboard */}
         {/* <Route path='/myCoursePlay' element={<MySingleCoursePlay />} /> */}
-        <Route path='/myCoursePlay/:id' element={<CoursePlay />} />
 
         {/* <Route path="/jobPost" element={<JobPost />}></Route> */}
         <Route path="*" element={<NotFound />}></Route>
