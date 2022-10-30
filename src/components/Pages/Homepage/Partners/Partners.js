@@ -29,7 +29,6 @@ const Partners = () => {
                 <div className='flex items-center justify-center'><img src={partner4} alt="" /></div>
                 <div className='flex items-center justify-center'><img src={partner5} alt="" /></div>
                 <div className='flex items-center justify-center'><img src={partner6} alt="" /></div>
-                <input type="range" min='10' max='100' defaultValue='70' />
             </div>
         </div>
     );

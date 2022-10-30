@@ -21,7 +21,7 @@ const EnrollCourse = () => {
 
     useEffect(() => {
         setLoading(true);
-        const url = `http://localhost:4000/api/courses/${id}`
+        const url = `https://api-lfzero.vercel.app/api/courses/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -50,7 +50,7 @@ const EnrollCourse = () => {
     const payNow = async token => {
         try {
             const response = await axios({
-                url: 'http://localhost:4000/payment',
+                url: 'https://api-lfzero.vercel.app/payment',
                 method: 'post',
                 data: {
                     amount: course?.price * 100,
@@ -63,14 +63,14 @@ const EnrollCourse = () => {
                     email: user?.email,
                     courseName: course?.name,
                     courseID: course?.id,
-                    courseImage: course?.image,
+                    courseImage: course?.photoURL,
                     courseDescription: course?.description,
                     transactionID: response?.data?.balance_transaction,
                     transactionAmount: response?.data?.amount / 100,
                     billingDetails: response?.data?.billing_details,
                 }
 
-                const url = 'http://localhost:4000/api/enroll'
+                const url = 'https://api-lfzero.vercel.app/api/enroll'
                 fetch(url, {
                     method: 'POST',
                     headers: {

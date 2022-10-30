@@ -17,7 +17,7 @@ const MyCourses = () => {
   }, []);
 
   useEffect(() => {
-    const url = `http://localhost:4000/api/enroll/${user?.email}`
+    const url = `https://api-lfzero.vercel.app/api/enroll/${user?.email}`
     fetch(url)
       .then(res => res.json())
       .then(data => setEnrolledCourses(data));

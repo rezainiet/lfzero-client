@@ -5,7 +5,7 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 
@@ -51,8 +51,8 @@ const SignUp = () => {
       .catch(function (error) {
         // console.log(error);
       });
-    await updateProfile({ displayName: name });
     await createUserWithEmailAndPassword(email, pass);
+    await updateProfile({ displayName: name });
   };
 
   if (user) {
@@ -144,9 +144,9 @@ const SignUp = () => {
                 type="checkbox"
               ></input>
               <label htmlFor="check">I agree to </label>
-              <a href="#" className="text-[#F53289] font-medium">
+              <Link to="/termsAndCondition" className="text-[#F53289] font-medium">
                 the terms and conditions
-              </a>
+              </Link>
             </div>
             <p className="text-[#F53289]">{error?.message}</p>
             <input
