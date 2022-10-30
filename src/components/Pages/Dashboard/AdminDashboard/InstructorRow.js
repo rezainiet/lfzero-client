@@ -1,9 +1,21 @@
 import React from "react";
+import { toast } from "react-toastify";
 
 const InstructorRow = ({ user }) => {
   const { name, email, phone, date, role } = user;
-
-  if (user.role === "instructor") {
+  const removeInstructor = (email) => {
+    fetch(`http://localhost:4000/api/users/${email}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount) {
+          toast.success(`Student: ${name} is deleted.`);
+        }
+      });
+  };
+  if (role === "instructor") {
     //   let count = 0;
     return (
       <tr>
@@ -13,12 +25,17 @@ const InstructorRow = ({ user }) => {
         <td>{phone}</td>
         <td>{date}</td>
         <td>
-          <button
-            className="btn btn-primary p-2 px-5 rounded text-white"
-            style={{ backgroundColor: "#F53289" }}
-          >
-            Remove Instructor
-          </button>
+          {role === "admin" && (
+            <button
+              className="btn btn-primary px-1 rounded text-white"
+              style={{ backgroundColor: "#F53289" }}
+              onClick={() => {
+                removeInstructor(user.email);
+              }}
+            >
+              Remove User
+            </button>
+          )}
         </td>
       </tr>
     );

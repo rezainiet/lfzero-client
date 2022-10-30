@@ -22,8 +22,11 @@
     "react-slick": "^0.29.0",
     "react-toastify": "^9.0.8",
     "slick-carousel": "^1.8.1",
+    "socket.io": "^4.5.3",
+    "socket.io-client": "^4.5.3",
     "sweetalert": "^2.1.2",
     "swiper": "^8.4.4",
+    "timeago.js": "^4.0.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

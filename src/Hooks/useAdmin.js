@@ -6,11 +6,11 @@ const useAdmin = (user) => {
   useEffect(() => {
     const email = user?.email;
     if (email) {
-      fetch(`https://secret-dusk-46242.herokuapp.com/admin/${email}`, {
+      fetch(`https://api-lfzero.vercel.app/api/users/admin/${email}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          // authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       })
         .then((res) => res.json())
