@@ -41,7 +41,7 @@ import EnrollCourse from "./components/Pages/SingleCourse/EnrollCourse/EnrollCou
 import Complain from "./components/Pages/Reviews/Complain/Complain";
 import RefundPolicy from "./components/Pages/RefundPolicy/RefundPolicy";
 import CoursePlay from "./components/Pages/Dashboard/StudentDashboard/CoursePlay";
-import FreeCourses from "./components/Pages/Courses/FreeCourses";
+import AllCourses from "./components/Pages/Courses/AllCourses";
 
 function App() {
   useEffect(() => {
@@ -70,7 +70,7 @@ function App() {
         <Route path="/addblog" element={<AddBlog></AddBlog>}></Route>
         <Route path="/reviews" element={<Reviews></Reviews>}></Route>
         <Route path="/addReview" element={<AddReview></AddReview>}></Route>
-        <Route path="/allcourses" element={<FreeCourses></FreeCourses>}></Route>
+        <Route path="/allcourses" element={<AllCourses></AllCourses>}></Route>
         <Route path="/details/:id" element={<CourseDetails />} />
         <Route path="/course/:id" element={<SingleCourse />} />
         <Route path="/enroll/:id" element={<EnrollCourse />} />
