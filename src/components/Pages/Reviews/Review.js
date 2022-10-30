@@ -5,7 +5,14 @@ const Review = ({ review }) => {
   return (
     <div className="card  lg:max-w-lg  bg-base-100 shadow-xl pb-5 rounded">
       <div className="grid grid-cols-6 gap-4 p-4">
-        <img src={img}></img>
+
+        <div className="avatar">
+          <div className="w-24 rounded-full">
+            <img src={img} />
+          </div>
+        </div>
+
+        {/* <img src={img}></img> */}
         <p
           className="col-end-8 col-span-6 text-xs text-start"
           style={{ color: "#F48C08" }}

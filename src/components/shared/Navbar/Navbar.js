@@ -1,5 +1,5 @@
 import React, { useEffect, useInsertionEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import logo from "./../../../assets/images/icons/logo.png";
@@ -71,7 +71,7 @@ const Navbar = () => {
                             className="text-white lg:bg-transparent flex flex-col lg:items-center lg:flex-row lg:px-4 xl:px-6 space-y-2 pt-3 lg:pt-0 lg:space-y-0 lg:space-x-3">
                             <a className='lg:text-sm xl:text-md' href="#">Category</a>
                             <a className='lg:text-sm xl:text-md' href="#">Organization</a>
-                            <a className='lg:text-sm xl:text-md' href="#">Courses</a>
+                            <Link className="lg:text-sm xl:text-md" to="/allcourses">Courses</Link>
                             <a className='lg:text-sm xl:text-md' href="https://meet.google.com/izn-mjkc-mdc" rel="noopener noreferrer" target='_blank' onClick={handleClickSupport}>Support</a>
                         </div>
                     </div>
