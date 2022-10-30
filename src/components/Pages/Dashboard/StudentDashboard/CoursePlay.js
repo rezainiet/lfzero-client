@@ -1,20 +1,24 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom';
+import auth from '../../../../firebase.init';
 import BigSpinner from '../../../shared/Spinner/BigSpinner';
 
 const CoursePlay = () => {
-    const play = useSelector(state => state.play.value)
+    const [user] = useAuthState(auth);
+    const play = useSelector(state => state.play.value);
     const { id } = useParams();
     const [course, setCourse] = useState({});
     const [isLoading, setLoading] = useState(false);
     const videoRef = useRef();
     const [videoSRC, setVideoSRC] = useState(null);
     const [videoTitle, setVideoTitle] = useState(null);
+    // const [enrolledCourse, setEnrolledCourses] = useState([]);
 
     useEffect(() => {
         setLoading(true);
-        const url = `http://localhost:4000/api/courses/${id}`;
+        const url = `https://api-lfzero.vercel.app/api/courses/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -24,6 +28,13 @@ const CoursePlay = () => {
                 setLoading(false);
             })
     }, [id]);
+
+    // useEffect(() => {
+    //     const url = `https://api-lfzero.vercel.app/api/enroll/${user?.email}`
+    //     fetch(url)
+    //         .then(res => res.json())
+    //         .then(data => setEnrolledCourses(data));
+    // }, [user, user?.email]);
 
     // console.log(id)
     // console.log(play);

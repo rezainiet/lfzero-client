@@ -14,7 +14,7 @@ const MySIngleCoursePlay2 = () => {
 
     useEffect(() => {
         setLoading(true);
-        const url = `http://localhost:4000/api/courses/${id}`;
+        const url = `https://api-lfzero.vercel.app/api/courses/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {

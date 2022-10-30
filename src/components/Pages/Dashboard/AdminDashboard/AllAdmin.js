@@ -5,7 +5,7 @@ const AllAdmin = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    const url = `https://lfzero.herokuapp.com/api/users`;
+    const url = `https://api-lfzero.vercel.app/api/users`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

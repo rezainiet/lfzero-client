@@ -5,7 +5,7 @@ const ShowAllStudent = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    const url = `https://lfzero.herokuapp.com/api/users`;
+    const url = `https://api-lfzero.vercel.app/api/users`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -16,7 +16,7 @@ const ShowAllStudent = () => {
     <div>
       <h2
         className=" text-center  p-10 pb-10 text-2xl font-bold text-purple-500"
-        // style={{ color: "#5D10E3" }}
+      // style={{ color: "#5D10E3" }}
       >
         Students List
       </h2>
@@ -36,7 +36,7 @@ const ShowAllStudent = () => {
               <StudentRow
                 key={user._id}
                 user={user}
-                //    refetch={refetch}
+              //    refetch={refetch}
               ></StudentRow>
             ))}
           </tbody>
