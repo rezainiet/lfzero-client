@@ -51,8 +51,8 @@ const SignUp = () => {
       .catch(function (error) {
         // console.log(error);
       });
-    await updateProfile({ displayName: name });
     await createUserWithEmailAndPassword(email, pass);
+    await updateProfile({ displayName: name });
   };
 
   if (user) {
